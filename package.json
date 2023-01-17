@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "sass": "sass --watch src/scss:build/css"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.57.1"
+  }
+}
