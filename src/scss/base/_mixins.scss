@@ -1,0 +1,13 @@
+@use 'variables' as v;
+
+@mixin phone{
+    @media only screen and (max-width: v.$phone){
+        @content;
+    }
+}
+
+@mixin tablet{
+    @media only screen and (min-width: v.$tabletMin) and (max-width: v.$tabletMax){
+        @content;
+    }
+}
