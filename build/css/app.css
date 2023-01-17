@@ -471,3 +471,55 @@ header {
     color: #34495E;
   }
 }
+
+.section_productos-en-descuento {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+  align-items: center;
+}
+.section_productos-en-descuento .content_section-left .content_titulo-producto h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: #34495E;
+}
+.section_productos-en-descuento .content_section-left .content_botones button {
+  padding: 15px 25px;
+  width: 180px;
+  color: #34495E;
+  background-color: #F5B041;
+  border: none;
+  border-radius: 10px;
+  transition: 0.25s ease;
+  font-size: 1.1rem;
+}
+.section_productos-en-descuento .content_section-left .content_botones button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.section_productos-en-descuento .content_section-right .content_producto {
+  display: flex;
+}
+.section_productos-en-descuento .content_section-right .content_producto img {
+  width: 500px;
+}
+.section_productos-en-descuento .content_section-right .content_producto .content_precio {
+  position: absolute;
+  right: 0%;
+  bottom: 0%;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  text-align: right;
+  background-color: #F5B041;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #34495E;
+  margin-right: 13rem;
+  box-shadow: 0 0 10px 2px #34495E;
+}
+.section_productos-en-descuento .content_section-right .content_producto .content_precio p {
+  font-size: 1.5rem;
+  font-weight: 900;
+}
