@@ -9,3 +9,14 @@ html{
 body{
     font-family: 'Chivo Mono', monospace;
 }
+
+a{
+    text-decoration: none;
+    color: v.$blanco;
+}
+
+ul,
+li{
+    list-style: none;
+    padding: 0%;
+}
