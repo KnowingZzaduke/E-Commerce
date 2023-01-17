@@ -505,8 +505,8 @@ header {
 }
 .section_productos-en-descuento .content_section-right .content_producto .content_precio {
   position: absolute;
-  right: 0%;
-  bottom: 0%;
+  right: 13rem;
+  bottom: 13rem;
   width: 150px;
   height: 150px;
   border-radius: 50%;
@@ -516,10 +516,84 @@ header {
   align-items: center;
   justify-content: center;
   color: #34495E;
-  margin-right: 13rem;
   box-shadow: 0 0 10px 2px #34495E;
 }
 .section_productos-en-descuento .content_section-right .content_producto .content_precio p {
   font-size: 1.5rem;
   font-weight: 900;
+}
+
+@media only screen and (max-width: 480px) {
+  .section_productos-en-descuento {
+    height: auto;
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .section_productos-en-descuento .content_section-left .content_titulo-producto h1 {
+    font-size: 3rem;
+  }
+  .section_productos-en-descuento .content_section-left .content_botones {
+    display: block;
+  }
+  .section_productos-en-descuento .content_section-left .content_botones button {
+    margin-top: 1rem;
+    width: 220px;
+  }
+  .section_productos-en-descuento .content_section-right {
+    grid-row: 2/1;
+  }
+  .section_productos-en-descuento .content_section-right .content_producto {
+    text-align: center;
+    justify-content: center;
+  }
+  .section_productos-en-descuento .content_section-right .content_producto img {
+    width: 300px;
+  }
+  .section_productos-en-descuento .content_section-right .content_producto .content_precio {
+    right: 3rem;
+    top: 17rem;
+    bottom: 13rem;
+    width: 100px;
+    height: 100px;
+  }
+  .section_productos-en-descuento .content_section-right .content_producto .content_precio p {
+    font-size: 1.1rem;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .section_productos-en-descuento {
+    height: auto;
+    display: grid;
+    grid-template-columns: auto;
+  }
+  .section_productos-en-descuento .content_section-left .content_titulo-producto h1 {
+    font-size: 3rem;
+  }
+  .section_productos-en-descuento .content_section-left .content_botones {
+    display: block;
+  }
+  .section_productos-en-descuento .content_section-left .content_botones button {
+    margin-top: 1rem;
+    width: 220px;
+  }
+  .section_productos-en-descuento .content_section-right {
+    grid-row: 2/1;
+  }
+  .section_productos-en-descuento .content_section-right .content_producto {
+    text-align: center;
+    justify-content: center;
+  }
+  .section_productos-en-descuento .content_section-right .content_producto img {
+    width: 400px;
+  }
+  .section_productos-en-descuento .content_section-right .content_producto .content_precio {
+    right: 3rem;
+    top: 24rem;
+    bottom: 13rem;
+    width: 100px;
+    height: 100px;
+  }
+  .section_productos-en-descuento .content_section-right .content_producto .content_precio p {
+    font-size: 1.1rem;
+  }
 }
