@@ -543,6 +543,8 @@ header {
     grid-row: 2/1;
   }
   .section_productos-en-descuento .content_section-right .content_producto {
+    width: 320px;
+    margin: 0% auto;
     text-align: center;
     justify-content: center;
   }
@@ -580,6 +582,8 @@ header {
     grid-row: 2/1;
   }
   .section_productos-en-descuento .content_section-right .content_producto {
+    width: 320px;
+    margin: 0% auto;
     text-align: center;
     justify-content: center;
   }
