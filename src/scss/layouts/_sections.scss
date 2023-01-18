@@ -38,30 +38,25 @@
 
     .content_section-right{
         .content_producto{
-            display: flex;
             img{
-                width: 500px;
+                width: 450px;
             }
 
             .content_precio{
-                position: absolute;
-                right: 13rem;
-                bottom: 13rem;
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                text-align: right;
                 background-color: v.$amarillo;
+                width: 450px;
+                margin: 0% auto;
+                height: 35px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                color: v.$azulClaro;
-                box-shadow: 0 0 10px 2px v.$azulClaro;
                 
 
                 p{
                     font-size: 1.5rem;
                     font-weight: 900;
+                    margin: 0%;
+                    color: v.$azulClaro;
                 }
             }
         }
@@ -103,11 +98,7 @@
                 }
 
                 .content_precio{
-                    right: 3rem;
-                    top: 17rem;
-                    bottom: 13rem;
-                    width: 100px;
-                    height: 100px;
+                    width: 300px;
 
                     p{
                         font-size: 1.1rem;
@@ -143,7 +134,6 @@
         .content_section-right{
             grid-row: 2/1;
             .content_producto{
-                width: 320px;
                 margin: 0% auto;
                 text-align: center;
                 justify-content: center;
@@ -152,12 +142,7 @@
                 }
 
                 .content_precio{
-                    right: 3rem;
-                    top: 24rem;
-                    bottom: 13rem;
-                    width: 100px;
-                    height: 100px;
-
+                    width: 400px;
                     p{
                         font-size: 1.1rem;
                     }
