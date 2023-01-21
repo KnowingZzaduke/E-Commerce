@@ -16,87 +16,81 @@ window.addEventListener('load', function(){
     })
 
     //Array de objetos que contiene los productos
-const arrayProducto = [
-    {
-        id: 1,
-        nombre: "Camara",
-        precio: 5000,
-        img: "../img/camara-gamer.png"
-    },
+    const arrayProducto = [
+        {
+            id: 1,
+            nombre: "Camara",
+            precio: 5000,
+            img: "../img/camara-gamer.png",
+        },
 
-    {
-        id: 2,
-        nombre: "Monitor",
-        precio: 5000,
-        img: "../img/monitor-gamer.png"
-    },
+        {
+            id: 2,
+            nombre: "Monitor",
+            precio: 5000,
+            img: "../img/monitor-gamer.png",
+        },
 
-    {
-        id: 3,
-        nombre: "Tarjeta gráfica",
-        precio: 5000,
-        img: "../img/tarjeta-grafica.png"
-    },
+        {
+            id: 3,
+            nombre: "Tarjeta gráfica",
+            precio: 5000,
+            img: "../img/tarjeta-grafica.png",
+        },
 
-    {
-        id: 4,
-        nombre: "Controles",
-        precio: 5000,
-        img: "../img/control-xbox.png"
-    },
+        {
+            id: 4,
+            nombre: "Controles",
+            precio: 5000,
+            img: "../img/control-xbox.png",
+        },
 
-    {
-        id: 5,
-        nombre: "Ariculares",
-        pracio: 5000,
-        img: "../img/auriculares-gamer.png"
-    },
+        {
+            id: 5,
+            nombre: "Ariculares",
+            pracio: 5000,
+            img: "../img/auriculares-gamer.png",
+        },
 
-    {
-        id: 6,
-        nombre: "Mouse",
-        precio: 5000,
-        img: "../img/mouse-gamer.png"
-    },
+        {
+            id: 6,
+            nombre: "Mouse",
+            precio: 5000,
+            img: "../img/mouse-gamer.png",
+        },
 
-    {
-        id: 7,
-        nombre: "Teclado",
-        precio: 5000,
-        img: "../img/teclado-gamer.png"
-    },
+        {
+            id: 7,
+            nombre: "Teclado",
+            precio: 5000,
+            img: "../img/teclado-gamer.png",
+        },
 
-    {
-        id: 8,
-        nombre: "Gabinete",
-        precio: 5000,
-        img: "../img/gabinete-gamer.png"
-    }
-]
+        {
+            id: 8,
+            nombre: "Gabinete",
+            precio: 5000,
+            img: "../img/gabinete-gamer.png",
+        }
+    ]
 
-const resultadoObtenerRutaImg = obtenerRutaImg(arrayProducto);
-
-
-const contentProductos = document.querySelector('.content_productos');
-const productos = document.createElement('DIV');
-const imgProductos = document.createElement('IMG');
-const nombreProducto = document.createElement('P');
-const precioProducto = document.createElement('P');
-productos.classList.add('productos');
-imgProductos.src = ("${resultadoObtenerRutaImg}");
+    const contentProducto = document.createElement('DIV');
+    contentProducto.classList.add('producto');
+    const contentCarrito = document.querySelector('.content_productos');
+    contentCarrito.appendChild(contentProducto)
+    arrayProducto.forEach((prod) =>{
+        const {id, nombre, precio, img} = prod;
+        contentProducto.innerHTML +=`
+        <img src="${img}" alt="Imagen productos">
+        <p class="nombre_producto">${nombre}</p>
+        <p class="precio_producto">${precio}</p>
+        <div class="content_detalles-producto" style="display: none;">
+            <button class="boton_agregar-carrito">Agregar al carrito</button>
+            <a href="#">
+                <button type="button" class="boton_visualizar"><i class="fa-solid fa-eye"></i></button>
+            </a>
+        </div>`
+    })
 })
 
-function obtenerRutaImg(arrayProducto){
-    for(let i = 0; i < arrayProducto.length; i++){
-        return arrayProducto[i].img;
-    }
-}
-
-
-function insertarImg(done){
-    contentProductos.appendChild(productos);
-    productos.innerHTML(imgProductos);
-    console.log(productos);
-    done();
-}
 
