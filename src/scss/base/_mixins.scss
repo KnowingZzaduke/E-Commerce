@@ -11,3 +11,15 @@
         @content;
     }
 }
+
+@mixin desktopSmall{
+    @media only screen and (min-width: v.$desktopSmallMin) and (max-width: v.$desktopSmallMax){
+        @content;
+    };
+}
+
+@mixin desktopBig{
+    @media only screen and (min-width: v.$desktopBig){
+        @content;
+    }
+}

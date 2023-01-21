@@ -2,12 +2,25 @@
 @use '../base/mixins' as m;
 
 
-//PRIMERA SECCIÓN
+//SECCIÓN PRODUCTOS EN DESCUENTO
 .section_productos-en-descuento{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     text-align: center;
     align-items: center;
+
+    .content_section-left,
+    .content_section-right{
+        padding-bottom: 5rem;
+
+        @include m.phone{
+            padding-bottom: 0%;
+        }
+
+        @include m.tablet{
+            padding-bottom: 0%;
+        }
+    }
     .content_section-left{
         .content_titulo-producto{
             h1{
@@ -50,6 +63,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                border-radius: 10px;
                 
 
                 p{
@@ -63,13 +77,14 @@
     }
 }
 
-//PRIMERA SECCIÓN VERSIÓN TELÉFONO Y TABLET
+//PRIMERA SECCIÓN VERSIÓN TELÉFONO, TABLET Y ESCRITORIO
 @include m.phone{
     .section_productos-en-descuento{
         height: auto;
         display: grid;
         grid-template-columns: auto;
         .content_section-left{
+            padding-bottom: 2rem;
             .content_titulo-producto{
                 h1{
                     font-size: 3rem;
@@ -115,6 +130,7 @@
         display: grid;
         grid-template-columns: auto;
         .content_section-left{
+            padding-bottom: 2rem;
             .content_titulo-producto{
                 h1{
                     font-size: 3rem;
@@ -148,6 +164,125 @@
                     }
                 }
             }   
+        }
+    }
+}
+
+@include m.desktopSmall{
+    .section_productos-en-descuento{
+        .content_section-left{
+            .content_botones{
+                display: block;
+                button{
+                    margin: 5px;
+                }
+            }
+        }
+        .content_section-right{
+            .content_producto{
+                img{
+                    width: 300px;
+                }
+
+                .content_precio{
+                    width: 350px;
+                }
+            }
+        }
+    }
+}
+
+
+//SECCIÓN PRODUCTOS POPULARES
+.section_productos-populares{
+    .content_header-section-productos-populares{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+
+        .content_titulo-productos{
+            h2{
+                text-align: center;
+                color: v.$azulClaro;
+            }
+        }
+
+        .content_categorias{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            a{
+                border-radius: 10px;
+                border: 2px solid v.$azulClaro;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                color: v.$azulClaro;
+                width: 150px;
+
+                &:hover{
+                    cursor: pointer;
+                    background-color: v.$amarillo;
+                }
+            }
+        }
+    }
+}
+
+//SECCIÓN PRODUCTOS POPULARES VERSIÓN TELÉFONO, TABLET Y ESCRITORIO
+@include m.phone{
+    .section_productos-populares{
+        .content_header-section-productos-populares{
+            display: block;
+
+            .content_titulo-productos{
+                h2{
+                    font-size: 1.7rem;
+                }
+            }
+            .content_categorias{
+                display: none;
+            }
+        }
+    }
+}
+
+@include m.tablet{
+    .section_productos-populares{
+        .content_header-section-productos-populares{
+            display: block;
+
+            .content_titulo-productos{
+                h2{
+                    font-size: 2rem;
+                }
+            }
+            .content_categorias{
+                display: none;
+            }
+        }
+    }
+}
+
+@include m.desktopSmall{
+    .section_productos-populares{
+        .content_header-section-productos-populares{
+            .content_titulo-productos{
+                h2{
+                    font-size: 2rem;
+                }
+            }
+            .content_categorias{
+                gap: 2px;
+
+                a{
+                    width: 100px;
+                    p{
+                        font-size: 10px;
+                    }
+                }
+            }
         }
     }
 }

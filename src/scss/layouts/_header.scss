@@ -27,6 +27,10 @@ header{
             @include m.phone{
                 display: none;
             }
+
+            @include m.tablet{
+                display: none;
+            }
         }
 
         .content_buscador{
@@ -39,6 +43,10 @@ header{
 
                 @include m.phone{
                     width: 160px;
+                }
+
+                @include m.tablet{
+                    width: 300px;
                 }
             }
 
@@ -88,6 +96,34 @@ header{
 
             a:hover{
                 color: v.$amarillo;
+            }
+
+            @include m.tablet{
+                i{
+                    transition: .25s ease;
+                    &:hover{
+                        color: v.$amarillo;
+                        transform: scale(1.1);
+                    }
+                }
+
+                a{
+                    display: none;
+                }
+            }
+
+            @include m.desktopSmall{
+                i{
+                    transition: .25s ease;
+                    &:hover{
+                        color: v.$amarillo;
+                        transform: scale(1.1);
+                    }
+                }
+
+                a{
+                    display: none;
+                }
             }
         }
     }

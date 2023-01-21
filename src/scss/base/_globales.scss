@@ -10,6 +10,11 @@ body{
     font-family: 'Chivo Mono', monospace;
 }
 
+section{
+    width: 98%;
+    margin: 0% auto;
+}
+
 a{
     text-decoration: none;
     color: v.$blanco;
