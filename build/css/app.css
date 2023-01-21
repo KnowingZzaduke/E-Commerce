@@ -689,6 +689,59 @@ header {
   cursor: pointer;
   background-color: #F5B041;
 }
+.section_productos-populares .content_productos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+  margin-top: 2rem;
+  box-sizing: border-box;
+}
+.section_productos-populares .content_productos:hover {
+  cursor: pointer;
+}
+.section_productos-populares .content_productos .producto {
+  border: 1px solid #34495E;
+  border-radius: 10px;
+  height: 170px;
+}
+.section_productos-populares .content_productos .producto .nombre_producto {
+  color: #34495E;
+  font-size: 1.2rem;
+}
+.section_productos-populares .content_productos .producto .content_detalles-producto {
+  height: 55px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+.section_productos-populares .content_productos .producto .content_detalles-producto:hover .content_botones {
+  height: 100%;
+}
+.section_productos-populares .content_productos .producto .content_detalles-producto .content_botones {
+  transition: 0.25s ease;
+  height: 0%;
+  position: absolute;
+  bottom: 0%;
+  width: 100%;
+}
+.section_productos-populares .content_productos .producto .content_detalles-producto .content_botones button {
+  background-color: #34495E;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  color: white;
+}
+.section_productos-populares .content_productos .producto .content_detalles-producto .content_botones :last-child {
+  color: #F5B041;
+  text-align: center;
+  justify-content: center;
+}
+.section_productos-populares .content_productos .producto .content_detalles-producto .content_botones :last-child i {
+  text-align: center;
+  justify-content: center;
+  width: 50px;
+}
 
 @media only screen and (max-width: 480px) {
   .section_productos-populares .content_header-section-productos-populares {

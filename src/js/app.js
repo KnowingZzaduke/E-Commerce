@@ -74,21 +74,21 @@ window.addEventListener('load', function(){
         }
     ]
 
-    const contentProducto = document.createElement('DIV');
-    contentProducto.classList.add('producto');
+    
     const contentCarrito = document.querySelector('.content_productos');
-    contentCarrito.appendChild(contentProducto)
     arrayProducto.forEach((prod) =>{
         const {id, nombre, precio, img} = prod;
-        contentProducto.innerHTML +=`
-        <img src="${img}" alt="Imagen productos">
-        <p class="nombre_producto">${nombre}</p>
-        <p class="precio_producto">${precio}</p>
-        <div class="content_detalles-producto" style="display: none;">
-            <button class="boton_agregar-carrito">Agregar al carrito</button>
-            <a href="#">
-                <button type="button" class="boton_visualizar"><i class="fa-solid fa-eye"></i></button>
-            </a>
+        contentCarrito.innerHTML +=`
+        <div class="producto">
+            <img src="${img}" alt="Imagen productos">
+            <p class="nombre_producto">${nombre}</p>
+            <p class="precio_producto">$${precio}</p>
+            <div class="content_detalles-producto";">
+                <div class="content_botones">
+                    <button class="boton_agregar-carrito">Agregar al carrito</button>   
+                    <button type="button" class="boton_visualizar"><i class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
         </div>`
     })
 })

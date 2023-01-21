@@ -228,6 +228,69 @@
             }
         }
     }
+
+    .content_productos{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+        box-sizing: border-box;
+        &:hover{
+            cursor: pointer;
+        }
+
+        .producto{
+            border: 1px solid v.$azulClaro;
+            border-radius: 10px;
+            height: 170px;
+
+            .nombre_producto{
+                color: v.$azulClaro;
+                font-size: 1.2rem;
+            }
+            
+            .content_detalles-producto{
+                height: 55px;
+                position: relative;
+                overflow: hidden;
+                text-align: center;
+
+                &:hover{
+                    .content_botones{
+                        height: 100%;
+                    }
+                }
+                .content_botones{
+                    transition: .25s ease;
+                    height: 0%;
+                    position: absolute;
+                    bottom: 0%;
+                    width: 100%;
+
+                    button{
+                        background-color: v.$azulClaro;
+                        border: none;
+                        border-radius: 10px;
+                        height: 40px;
+                        color: v.$blanco;
+                    }
+
+                    :last-child{
+                        color: v.$amarillo;
+                        text-align: center;
+                        justify-content: center;
+
+                        i{
+                            text-align: center;
+                            justify-content: center;
+                            width: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 //SECCIÓN PRODUCTOS POPULARES VERSIÓN TELÉFONO, TABLET Y ESCRITORIO
