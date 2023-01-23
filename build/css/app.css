@@ -427,6 +427,41 @@ header {
 .navbar .navbar_right .link a:hover {
   color: #F5B041;
 }
+.navbar .navbar_right .link .content_carrito {
+  position: relative;
+}
+.navbar .navbar_right .link .content_lista-productos-carrito {
+  position: absolute;
+  background-color: #F5B041;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+.navbar .navbar_right .link .content_lista-productos-carrito .content_producto {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  text-align: center;
+}
+.navbar .navbar_right .link .content_lista-productos-carrito .content_producto .content_imagen-producto img {
+  width: 80px;
+  border-radius: 10px;
+}
+.navbar .navbar_right .link .content_lista-productos-carrito .content_boton-vaciar-carrito {
+  text-align: center;
+}
+.navbar .navbar_right .link .content_lista-productos-carrito .content_boton-vaciar-carrito button {
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #34495E;
+  color: white;
+  transition: 0.25s ease;
+  padding: 5px;
+}
+.navbar .navbar_right .link .content_lista-productos-carrito .content_boton-vaciar-carrito button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
 @media only screen and (min-width: 481px) and (max-width: 768px) {
   .navbar .navbar_right .link i {
     transition: 0.25s ease;
@@ -875,16 +910,115 @@ header {
     margin-bottom: 1rem;
   }
 }
+@media only screen and (min-width: 1200px) {
+  .content_productos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px;
+  }
+  .content_productos .producto {
+    margin-top: 2rem;
+    margin: 1rem auto;
+    width: 90%;
+    height: 320px;
+  }
+  .content_productos .producto img {
+    width: 100%;
+    height: 200px;
+  }
+  .content_productos .producto:hover .content_parrafos-detalle-producto {
+    display: block;
+  }
+  .content_productos .producto:hover .content_detalles-producto {
+    height: auto;
+  }
+  .content_productos .producto .content_detalles-producto {
+    height: auto;
+  }
+  .content_productos .producto .content_detalles-producto .content_botones {
+    margin-bottom: 1rem;
+  }
+}
 .section_producto-mitad-precio {
-  margin-top: 2rem;
+  background-color: black;
+  border-radius: 10px;
 }
 .section_producto-mitad-precio .content_producto-mitad-precio {
-  width: 80%;
-  margin: 0% auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 30px 0;
 }
 .section_producto-mitad-precio .content_producto-mitad-precio .content_left-producto-mitad-precio {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .section_producto-mitad-precio .content_producto-mitad-precio .content_left-producto-mitad-precio img {
   width: 600px;
+}
+.section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_aviso {
+  display: flex;
+  justify-content: center;
+}
+.section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_aviso p {
+  background-color: #F5B041;
+  color: white;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+.section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_descuento h2 {
+  color: #34495E;
+  font-size: 4rem;
+  text-align: center;
+}
+.section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_descuento p {
+  color: white;
+  font-size: 2rem;
+  text-align: center;
+}
+.section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_boton-comprar {
+  display: flex;
+  justify-content: center;
+}
+.section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_boton-comprar button {
+  width: 200px;
+  height: 40px;
+  background-color: #F5B041;
+  border-radius: 10px;
+  transition: 0.25s ease;
+  border: none;
+  color: white;
+}
+.section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_boton-comprar button:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 480px) {
+  .section_producto-mitad-precio .content_producto-mitad-precio {
+    display: block;
+  }
+  .section_producto-mitad-precio .content_producto-mitad-precio .content_left-producto-mitad-precio img {
+    width: 300px;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .section_producto-mitad-precio .content_producto-mitad-precio {
+    display: block;
+  }
+  .section_producto-mitad-precio .content_producto-mitad-precio .content_left-producto-mitad-precio img {
+    width: 450px;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+  .section_producto-mitad-precio .content_producto-mitad-precio {
+    display: block;
+  }
+  .section_producto-mitad-precio .content_producto-mitad-precio .content_left-producto-mitad-precio img {
+    width: 650px;
+  }
 }

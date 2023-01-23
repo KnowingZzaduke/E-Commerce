@@ -28,7 +28,7 @@ window.addEventListener('load', function(){
             id: 2,
             nombre: "Monitor",
             precio: 5000,
-            img: "src/img/monitor-gamer.png",
+            img: "src/img/monitor-gamer.jpg",
         },
 
         {

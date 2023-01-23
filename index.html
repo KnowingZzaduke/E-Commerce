@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Carrito de compras</title>
     <link rel="stylesheet" href="build/css/app.css">
 </head>
 <body>
@@ -45,8 +45,33 @@
                     <a href="#">Sign in</a>
                 </div>
                 <div class="link">
-                    <i class="fa-sharp fa-solid fa-cart-shopping"></i>
-                    <a href="#">Carrito</a>
+                    <div class="content_carrito">
+                        <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+                        <a href="#">Carrito</a>
+                    </div>
+
+                    <div class="content_lista-productos-carrito">
+                        <div class="content_producto">
+                            <div class="content_imagen-producto">
+                                <img src="src/img/monitor-gamer.jpg" alt="producto">
+                            </div>
+                            <div class="content_lista-productos">
+                                <ul>
+                                    <li>
+                                        <p>Nombre Producto</p>
+                                        <div class="content_valor-eliminar">
+                                            <span>Precio</span>
+                                            <i class="fa-solid fa-trash"></i>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="content_boton-vaciar-carrito">
+                            <button type="button">Vaciar Carrito</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
@@ -67,7 +92,7 @@
 
         <div class="content_section-right">
             <div class="content_producto">
-                <img src="src/img/monitor-gamer.png" alt="Monitor gamer">
+                <img src="src/img/monitor-gamer.jpg" alt="Monitor gamer">
                 <div class="content_precio">
                     <p>Solo por 400.000</p>
                 </div>
@@ -116,7 +141,7 @@
     <section class="section_producto-mitad-precio">
         <div class="content_producto-mitad-precio">
             <div class="content_left-producto-mitad-precio">
-                <img src="src/img/monitor-gamer.png" alt="Monitor gamer">
+                <img src="src/img/monitor-gamer.jpg" alt="Monitor gamer">
             </div>
 
             <div class="content_right-producto-mitad-precio">
@@ -126,15 +151,11 @@
 
                 <div class="content_descuento">
                     <h2>Obtén un 50% de descueto</h2>
-                    <p>Monito 4k 120hz</p>
+                    <p>Monitor 4k 120hz</p>
                 </div>
 
                 <div class="content_boton-comprar">
-                    <a href="#">
-                        <button type="button">
-                            Comprar ahora
-                        </button>
-                    </a>
+                    <button type="button">Comprar</button>
                 </div>
             </div>
         </div>

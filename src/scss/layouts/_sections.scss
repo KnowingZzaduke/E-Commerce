@@ -475,7 +475,7 @@
     }
 }
 
-@include m.desktopBIg{
+@include m.desktopBig{
     .content_productos{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -514,7 +514,112 @@
 
 //SECCIÓN PRODUCTOS MITAD DE PRECIO
 .section_producto-mitad-precio{
+    background-color: v.$negro;
+    border-radius: 10px;
     .content_producto-mitad-precio{
-        background-color: v.$negro;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 30px 0;
+        .content_left-producto-mitad-precio{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            img{
+                width: 600px;
+            }
+        }
+
+        .content_right-producto-mitad-precio{
+            .content_aviso{
+                display: flex;
+                justify-content: center;
+                p{
+                    background-color: v.$amarillo;
+                    color: v.$blanco;
+                    width: 200px;
+                    height: 40px;
+                    border-radius: 10px;
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                }
+            }
+
+            .content_descuento{
+                h2{
+                    color: v.$azulClaro;
+                    font-size: 4rem;
+                    text-align: center;
+                }
+
+                p{
+                    color: v.$blanco;
+                    font-size: 2rem;
+                    text-align: center;
+                }
+            }
+
+            .content_boton-comprar{
+                display: flex;
+                justify-content: center;
+                button{
+                    width: 200px;
+                    height: 40px;
+                    background-color: v.$amarillo;
+                    border-radius: 10px;
+                    transition: .25s ease;
+                    border: none;
+                    color: v.$blanco;
+
+                    &:hover{
+                        transform: scale(1.1);
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+}
+
+//SECCIÓN PRODUCTOS POPULARES VERSIÓN TELÉFONO, TABLET Y ESCRITORIO
+@include m.phone{
+    .section_producto-mitad-precio{
+        .content_producto-mitad-precio{
+            display: block;
+
+            .content_left-producto-mitad-precio{
+                img{
+                    width: 300px;
+                }
+            }
+        }
+    }
+}
+
+@include m.tablet{
+    .section_producto-mitad-precio{
+        .content_producto-mitad-precio{
+            display: block;
+
+            .content_left-producto-mitad-precio{
+                img{
+                    width: 450px;
+                }
+            }
+        }
+    }
+}
+
+@include m.desktopSmall{
+    .section_producto-mitad-precio{
+        .content_producto-mitad-precio{
+            display: block;
+
+            .content_left-producto-mitad-precio{
+                img{
+                    width: 650px;
+                }
+            }
+        }
     }
 }
