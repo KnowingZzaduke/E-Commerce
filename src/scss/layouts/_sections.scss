@@ -12,6 +12,7 @@
     .content_section-left,
     .content_section-right{
         padding-bottom: 5rem;
+        margin-top: 5rem;
 
         @include m.phone{
             padding-bottom: 0%;
@@ -19,6 +20,10 @@
 
         @include m.tablet{
             padding-bottom: 0%;
+        }
+
+        @include m.desktopSmall{
+            margin-top: 5rem;
         }
     }
     .content_section-left{
@@ -50,6 +55,13 @@
     }
 
     .content_section-right{
+        @include m.phone{
+            margin-top: 5rem;
+        }
+
+        @include m.tablet{
+            margin-top: 5rem;
+        }
         .content_producto{
             img{
                 width: 450px;

@@ -3,11 +3,13 @@
 
 header{
     background-color: v.$azulClaro;
+    z-index: 1;
+    position: fixed;
+    width: 100%;
 }
 .navbar{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    z-index: 1;
 
     .navbar_left{
         display: flex;
@@ -98,35 +100,31 @@ header{
                 color: v.$amarillo;
             }
 
-            .content_carrito{
-                position: relative;
-            }
-
-            .content_lista-productos-carrito{
-                position: absolute;
+            .content_lista-carrito{
                 background-color: v.$amarillo;
-                border-radius: 10px;
+                position: absolute;
+                left: 70%;
                 margin-top: 1rem;
-                .content_producto{
-                    display: grid;
-                    grid-template-columns: repeat(2, 1fr);
-                    align-items: center;
-                    text-align: center;
-                    .content_imagen-producto{
-                        img{
-                            width: 80px;
-                            border-radius: 10px;
-                        }
-                    }
+                border-radius: 10px;
+                width: 400px;
+                display: block;
+                height: auto;
 
-                    .content_lista-productos{
-                        
+                .carrito{
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    align-items: center;
+                    padding: 10px;
+                    justify-content: center;
+                    text-align: center;
+                    img{
+                        border-radius: 10px;
+                        width: 150px;
                     }
                 }
-
+    
                 .content_boton-vaciar-carrito{
                     text-align: center;
-
                     button{
                         margin-bottom: 1rem;
                         border: none;
@@ -135,6 +133,7 @@ header{
                         color: v.$blanco;
                         transition: .25s ease;
                         padding: 5px;
+                        padding: 10px;
                         &:hover{
                             transform: scale(1.1);
                             cursor: pointer;

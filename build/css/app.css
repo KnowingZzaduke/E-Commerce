@@ -335,12 +335,14 @@ template {
 
 header {
   background-color: #34495E;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
 }
 
 .navbar {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  z-index: 1;
 }
 .navbar .navbar_left {
   display: flex;
@@ -427,29 +429,32 @@ header {
 .navbar .navbar_right .link a:hover {
   color: #F5B041;
 }
-.navbar .navbar_right .link .content_carrito {
-  position: relative;
-}
-.navbar .navbar_right .link .content_lista-productos-carrito {
-  position: absolute;
+.navbar .navbar_right .link .content_lista-carrito {
   background-color: #F5B041;
-  border-radius: 10px;
+  position: absolute;
+  left: 70%;
   margin-top: 1rem;
-}
-.navbar .navbar_right .link .content_lista-productos-carrito .content_producto {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
-  text-align: center;
-}
-.navbar .navbar_right .link .content_lista-productos-carrito .content_producto .content_imagen-producto img {
-  width: 80px;
   border-radius: 10px;
+  width: 400px;
+  display: block;
+  height: auto;
 }
-.navbar .navbar_right .link .content_lista-productos-carrito .content_boton-vaciar-carrito {
+.navbar .navbar_right .link .content_lista-carrito .carrito {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  padding: 10px;
+  justify-content: center;
   text-align: center;
 }
-.navbar .navbar_right .link .content_lista-productos-carrito .content_boton-vaciar-carrito button {
+.navbar .navbar_right .link .content_lista-carrito .carrito img {
+  border-radius: 10px;
+  width: 150px;
+}
+.navbar .navbar_right .link .content_lista-carrito .content_boton-vaciar-carrito {
+  text-align: center;
+}
+.navbar .navbar_right .link .content_lista-carrito .content_boton-vaciar-carrito button {
   margin-bottom: 1rem;
   border: none;
   border-radius: 10px;
@@ -457,8 +462,9 @@ header {
   color: white;
   transition: 0.25s ease;
   padding: 5px;
+  padding: 10px;
 }
-.navbar .navbar_right .link .content_lista-productos-carrito .content_boton-vaciar-carrito button:hover {
+.navbar .navbar_right .link .content_lista-carrito .content_boton-vaciar-carrito button:hover {
   transform: scale(1.1);
   cursor: pointer;
 }
@@ -555,6 +561,7 @@ header {
 .section_productos-en-descuento .content_section-left,
 .section_productos-en-descuento .content_section-right {
   padding-bottom: 5rem;
+  margin-top: 5rem;
 }
 @media only screen and (max-width: 480px) {
   .section_productos-en-descuento .content_section-left,
@@ -566,6 +573,12 @@ header {
   .section_productos-en-descuento .content_section-left,
   .section_productos-en-descuento .content_section-right {
     padding-bottom: 0%;
+  }
+}
+@media only screen and (min-width: 769px) and (max-width: 1199px) {
+  .section_productos-en-descuento .content_section-left,
+  .section_productos-en-descuento .content_section-right {
+    margin-top: 5rem;
   }
 }
 .section_productos-en-descuento .content_section-left .content_titulo-producto h1 {
@@ -586,6 +599,16 @@ header {
 .section_productos-en-descuento .content_section-left .content_botones button:hover {
   transform: scale(1.1);
   cursor: pointer;
+}
+@media only screen and (max-width: 480px) {
+  .section_productos-en-descuento .content_section-right {
+    margin-top: 5rem;
+  }
+}
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+  .section_productos-en-descuento .content_section-right {
+    margin-top: 5rem;
+  }
 }
 .section_productos-en-descuento .content_section-right .content_producto img {
   width: 450px;

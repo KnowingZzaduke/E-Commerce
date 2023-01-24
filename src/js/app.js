@@ -1,4 +1,4 @@
-window.addEventListener('load', function(){
+
     const toggleAbrir = document.querySelector('.abrir');
     const toggleCerrar = document.querySelector('.cerrar')
     const menu = document.querySelector('.content_lista-menu');
@@ -74,11 +74,12 @@ window.addEventListener('load', function(){
         }
     ]
 
-    
+    const carrito = [];
+    const contentListaProductos = document.querySelector('.content_lista-carrito');
     const contentCarrito = document.querySelector('.content_productos');
+
     arrayProducto.forEach((prod) =>{
         const {id, nombre, precio, img} = prod;
-        console.log(img);
         contentCarrito.innerHTML +=`
         <div class="producto">
             <img src="${img}" alt="Imagen productos">
@@ -88,12 +89,51 @@ window.addEventListener('load', function(){
             </div>
             <div class="content_detalles-producto";">
                 <div class="content_botones">
-                    <button class="boton_agregar-carrito">Agregar al carrito</button>   
+                    <button type="button" class="boton_agregar-carrito" onclick="agregarProducto(${id})">Agregar al carrito</button>   
                     <button type="button" class="boton_visualizar"><i class="fa-solid fa-eye"></i></button>
                 </div>
             </div>
-        </div>`
+        </div>
+        `
     })
-})
+
+    //FUNCIÓN PARA AGREGAR PRODUCTOS AL CARRITO
+    function agregarProducto(id){
+        const item = arrayProducto.find((prod) => prod.id === id)
+        carrito.push(item);
+        mostrarProductos();
+    }
+
+    function mostrarProductos(){
+        const listaCarrito = document.querySelector('.lista_carrito');
+
+        if(listaCarrito){
+            contentListaProductos.style.display = ('block')
+            listaCarrito.innerHTML = "";
+            carrito.forEach((prod) =>{
+                const {id, nombre, precio, img} = prod;
+                listaCarrito.innerHTML += `
+                <div class="carrito">
+                    <img src="${img}" alt="Monitor Gamer">
+                    <div class="content_detalle-producto">
+                        <p>${nombre}</p>
+                        <p>$${precio}</p>
+                    </div>
+                    <div class="content_boton-borrar-producto">
+                        <i class="fa-solid fa-trash"></i>
+                    </div>
+                    <hr>
+                </div>` 
+            })
+        }
+    }
+
+    function vaciarCarrito(){
+        const botonVaciarCarrito = document.querySelector('.vaciar');
+        if(botonVaciarCarrito){
+            carrito.length = [];
+        }
+        mostrarProductos();
+    }
 
 
