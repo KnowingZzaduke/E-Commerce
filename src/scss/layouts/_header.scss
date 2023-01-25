@@ -109,7 +109,13 @@ header{
                 width: 400px;
                 display: block;
                 height: auto;
-
+                p{
+                    text-align: center;
+                    font-size: 2rem;
+                    color: v.$azulClaro;
+                }
+                
+                .lista_carrito{
                 .carrito{
                     display: grid;
                     grid-template-columns: repeat(3, 1fr);
@@ -117,11 +123,21 @@ header{
                     padding: 10px;
                     justify-content: center;
                     text-align: center;
+                    border: 2px solid v.$azulClaro;
+                    margin: 1rem;
+                    border-radius: 10px;
                     img{
                         border-radius: 10px;
                         width: 150px;
                     }
+
+                    .content_detalle-producto{
+                        p{
+                            font-size: 1.2rem;
+                        }
+                    }
                 }
+               }
     
                 .content_boton-vaciar-carrito{
                     text-align: center;

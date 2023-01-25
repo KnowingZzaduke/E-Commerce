@@ -77,7 +77,7 @@
     const carrito = [];
     const contentListaProductos = document.querySelector('.content_lista-carrito');
     const contentCarrito = document.querySelector('.content_productos');
-
+    const listaCarrito = document.querySelector('.lista_carrito');
     arrayProducto.forEach((prod) =>{
         const {id, nombre, precio, img} = prod;
         contentCarrito.innerHTML +=`
@@ -105,10 +105,9 @@
     }
 
     function mostrarProductos(){
-        const listaCarrito = document.querySelector('.lista_carrito');
-
         if(listaCarrito){
             contentListaProductos.style.display = ('block')
+            listaCarrito.style.display = ('block');
             listaCarrito.innerHTML = "";
             carrito.forEach((prod) =>{
                 const {id, nombre, precio, img} = prod;
@@ -123,17 +122,27 @@
                         <i class="fa-solid fa-trash"></i>
                     </div>
                     <hr>
-                </div>` 
+                </div>
+                <hr>
+                ` 
             })
         }
     }
 
-    function vaciarCarrito(){
+    function vaciarCarrito(resultadoP){
         const botonVaciarCarrito = document.querySelector('.vaciar');
         if(botonVaciarCarrito){
             carrito.length = [];
+            contentListaProductos.style.display = ('block')
+            listaCarrito.style.display = ('none');
+            if(carrito.length == []){
+                listaCarrito.insertAdjacentHTML('afterend', '<p class="parrafo_mensaje">Por favor agrega productos al carrito</p>');
+                const p = document.querySelector('.parrafo_mensaje');
+            }else{ 
+                console.log(p);                
+                mostrarProductos();
+            }
         }
-        mostrarProductos();
-    }
 
+    }
 
