@@ -74,7 +74,7 @@
         }
     ]
 
-    const carrito = [];
+    let carrito = [];
     const contentListaProductos = document.querySelector('.content_lista-carrito');
     const contentCarrito = document.querySelector('.content_productos');
     const listaCarrito = document.querySelector('.lista_carrito');
@@ -122,7 +122,7 @@
                         <p>$${precio}</p>
                     </div>
                     <div class="content_boton-borrar-producto">
-                        <i class="fa-solid fa-trash" onclick="eliminarProducto()"></i>
+                        <i class="fa-solid fa-trash trash" onclick="eliminarProducto(${id})"></i>
                     </div>
                     <hr>
                 </div>
@@ -151,11 +151,15 @@
     }
 
     function eliminarProducto(){
-        carrito.forEach((prod) =>{
-            const {id} = prod;
-            if(prod.id === id){
-                carrito.splice(id);
-                mostrarProductos();
-            }
-        })
+        for(let i = 0; i < carrito.length; i++){
+            carrito = carrito.filter((i) =>{
+                if(i !== i){
+                    mostrarProductos();
+                }
+            })
+        }
     }
+
+    // const idProducto = id;
+    // carrito = carrito.filter((idProducto) => idProducto.id !== idProducto)
+    // mostrarProductos();

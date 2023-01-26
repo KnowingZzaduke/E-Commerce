@@ -148,6 +148,17 @@ header{
                                 font-size: 1.2rem;
                             }
                         }
+
+                        .content_boton-borrar-producto{
+                            .trash{
+                                transition: .25s ease;
+                                &:hover{
+                                    color: v.$azulClaro;
+                                    cursor: pointer;
+                                    transform: scale(1.1);
+                                }
+                            }
+                        }
                     }
                 }
     

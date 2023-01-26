@@ -472,6 +472,14 @@ header {
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_detalle-producto p {
   font-size: 1.2rem;
 }
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_boton-borrar-producto .trash {
+  transition: 0.25s ease;
+}
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_boton-borrar-producto .trash:hover {
+  color: #34495E;
+  cursor: pointer;
+  transform: scale(1.1);
+}
 .navbar .navbar_right .link .content_lista-carrito .content_boton-vaciar-carrito {
   text-align: center;
   display: flex;
