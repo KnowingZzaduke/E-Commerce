@@ -78,6 +78,8 @@
     const contentListaProductos = document.querySelector('.content_lista-carrito');
     const contentCarrito = document.querySelector('.content_productos');
     const listaCarrito = document.querySelector('.lista_carrito');
+    const botonVaciarCarrito = document.querySelector('.vaciar');
+
     arrayProducto.forEach((prod) =>{
         const {id, nombre, precio, img} = prod;
         contentCarrito.innerHTML +=`
@@ -129,20 +131,17 @@
         }
     }
 
-    function vaciarCarrito(resultadoP){
-        const botonVaciarCarrito = document.querySelector('.vaciar');
-        if(botonVaciarCarrito){
-            carrito.length = [];
-            contentListaProductos.style.display = ('block')
-            listaCarrito.style.display = ('none');
-            if(carrito.length == []){
-                listaCarrito.insertAdjacentHTML('afterend', '<p class="parrafo_mensaje">Por favor agrega productos al carrito</p>');
-                const p = document.querySelector('.parrafo_mensaje');
-            }else{ 
-                console.log(p);                
-                mostrarProductos();
-            }
+    function vaciarCarrito(){
+        carrito.length = [];
+        listaCarrito.style.display= ('none');
+        if(carrito.length == []){
+            setTimeout(mostrarMensaje, 1000);
+        }else{
+            mostrarProductos();
         }
-
     }
 
+    function mostrarMensaje(){
+        const p = document.createElement('P');
+        p.textContent = 'hola';
+    }
