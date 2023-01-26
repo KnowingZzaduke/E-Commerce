@@ -136,35 +136,26 @@
         carrito.length = [];
         listaCarrito.style.display= ('none');
         if(carrito.length == []){
-            mostrarMensaje()
-            setInterval(() =>{
+            setTimeout(() =>{
                 contentListaProductos.style.display = ('none');
-            }, 1000)
+            }, 500)
         }else{
             mostrarProductos();
         }
     }
 
-    function mostrarMensaje(){
-        const div = document.createElement('DIV');
-        div.classList.add('content_parrafo-mensaje');
-        const p = document.createElement('P');
-        p.textContent = '!Tu carrito se encuentra vació¡';
-        div.appendChild(p);
-        contentListaProductos.insertBefore(div, contentBotonVaciarCarrito);
-        let mensaje = document.querySelector('.content_parrafo-mensaje');
-        setInterval(() =>{
-            mensaje.style.display = ('none');
-        }, 1000);
+    function mostrarAlerta(){
+        setTimeout(() =>{
+            alert("Tu carrito se encuentra vació, por favor agrega productos");         
+        }, 1000)
     }
 
     function eliminarProducto(){
         carrito.forEach((prod) =>{
             const {id} = prod;
             if(prod.id === id){
-                carrito.shift();
+                carrito.splice(id);
                 mostrarProductos();
-                mostrarMensaje();
             }
         })
     }

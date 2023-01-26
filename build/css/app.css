@@ -429,6 +429,16 @@ header {
 .navbar .navbar_right .link a:hover {
   color: #F5B041;
 }
+.navbar .navbar_right .link .content_carrito {
+  display: flex;
+  align-items: center;
+}
+.navbar .navbar_right .link .content_carrito p {
+  color: white;
+}
+.navbar .navbar_right .link .content_carrito p:hover {
+  color: #F5B041;
+}
 .navbar .navbar_right .link .content_lista-carrito {
   background-color: #F5B041;
   position: absolute;

@@ -100,6 +100,17 @@ header{
             a:hover{
                 color: v.$amarillo;
             }
+            .content_carrito{
+                display: flex;
+                align-items: center;
+
+                p{
+                    color: v.$blanco;
+                    &:hover{
+                        color: v.$amarillo;
+                    }
+                }
+            }
 
             .content_lista-carrito{
                 background-color: v.$amarillo;
