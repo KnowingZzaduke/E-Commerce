@@ -464,9 +464,12 @@ header {
 }
 .navbar .navbar_right .link .content_lista-carrito .content_boton-vaciar-carrito {
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .navbar .navbar_right .link .content_lista-carrito .content_boton-vaciar-carrito button {
   margin-bottom: 1rem;
+  margin-top: 1rem;
   border: none;
   border-radius: 10px;
   background-color: #34495E;

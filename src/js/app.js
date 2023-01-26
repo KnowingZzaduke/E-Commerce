@@ -79,6 +79,7 @@
     const contentCarrito = document.querySelector('.content_productos');
     const listaCarrito = document.querySelector('.lista_carrito');
     const botonVaciarCarrito = document.querySelector('.vaciar');
+    const contentBotonVaciarCarrito = document.querySelector('.content_boton-vaciar-carrito');
 
     arrayProducto.forEach((prod) =>{
         const {id, nombre, precio, img} = prod;
@@ -121,7 +122,7 @@
                         <p>$${precio}</p>
                     </div>
                     <div class="content_boton-borrar-producto">
-                        <i class="fa-solid fa-trash"></i>
+                        <i class="fa-solid fa-trash" onclick="eliminarProducto()"></i>
                     </div>
                     <hr>
                 </div>
@@ -135,13 +136,35 @@
         carrito.length = [];
         listaCarrito.style.display= ('none');
         if(carrito.length == []){
-            setTimeout(mostrarMensaje, 1000);
+            mostrarMensaje()
+            setInterval(() =>{
+                contentListaProductos.style.display = ('none');
+            }, 1000)
         }else{
             mostrarProductos();
         }
     }
 
     function mostrarMensaje(){
+        const div = document.createElement('DIV');
+        div.classList.add('content_parrafo-mensaje');
         const p = document.createElement('P');
-        p.textContent = 'hola';
+        p.textContent = '!Tu carrito se encuentra vació¡';
+        div.appendChild(p);
+        contentListaProductos.insertBefore(div, contentBotonVaciarCarrito);
+        let mensaje = document.querySelector('.content_parrafo-mensaje');
+        setInterval(() =>{
+            mensaje.style.display = ('none');
+        }, 1000);
+    }
+
+    function eliminarProducto(){
+        carrito.forEach((prod) =>{
+            const {id} = prod;
+            if(prod.id === id){
+                carrito.shift();
+                mostrarProductos();
+                mostrarMensaje();
+            }
+        })
     }
