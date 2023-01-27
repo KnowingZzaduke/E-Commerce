@@ -108,11 +108,21 @@
     })
 
     //FUNCIÓN PARA AGREGAR PRODUCTOS AL CARRITO
-    function agregarProducto(id){
-        const item = arrayProducto.find((prod) => prod.id === id)
-        carrito.push(item);
-        mostrarProductos();
-    }
+    const agregarProducto = (id) => {
+        const existe = carrito.some((prod) => prod.id === id)
+        if(existe){
+            const prod = carrito.map((prod) => {
+                if(prod.id === id){
+                    prod.cantidad++
+                    console.log(prod.cantidad)
+                }
+            })
+        }else{
+            const item = arrayProducto.find((prod) => prod.id === id)
+            carrito.push(item)
+        }
+        mostrarProductos()
+    };
 
     function mostrarProductos(){
         if(listaCarrito){
@@ -121,11 +131,7 @@
             listaCarrito.innerHTML = "";
             carrito.forEach((prod) =>{
                 let {id, nombre, precio, img, cantidad} = prod;
-                if(id === id){
-                    for(let i = 0; i < cantidad; i++){
-                        cantidad += cantidad;
-                    }
-                }
+
                 listaCarrito.innerHTML += `
                 <div class="carrito">
                     <img src="${img}" alt="Monitor Gamer">
@@ -133,7 +139,7 @@
                         <p>${nombre}</p>
                         <div class="content_precio">
                         <p>$${precio}</p>
-                        <p>X${cantidad}</ddp>
+                        <p>X${cantidad}</p>
                         </div>
                     </div>
                     <div class="content_boton-borrar-producto">
@@ -167,7 +173,7 @@
 
     function eliminarProducto(id){
         const idProducto = id;
-        carrito = carrito.filter((producto) => producto.id !== idProducto)
+        carrito = carrito.filter((producto) => producto.id !== idProducto);
         mostrarProductos();
     }
 
