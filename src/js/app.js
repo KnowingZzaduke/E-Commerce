@@ -121,7 +121,10 @@
             listaCarrito.innerHTML = "";
             carrito.forEach((prod) =>{
                 let {id, nombre, precio, img, cantidad} = prod;
-                if(id == id){             
+                if(id === id){
+                    for(let i = 0; i < cantidad; i++){
+                        cantidad += cantidad;
+                    }
                 }
                 listaCarrito.innerHTML += `
                 <div class="carrito">
@@ -140,8 +143,6 @@
                 </div>
                 <hr>
                 `
-
-                
             })
         }
     }
