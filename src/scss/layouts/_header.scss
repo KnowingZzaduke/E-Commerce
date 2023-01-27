@@ -149,6 +149,13 @@ header{
                             }
                         }
 
+                        .content_precio{
+                            display: flex;
+                            p{
+                                padding: 10px;
+                            }
+                        }
+
                         .content_boton-borrar-producto{
                             .trash{
                                 transition: .25s ease;

@@ -22,6 +22,7 @@
             nombre: "Camara",
             precio: 5000,
             img: "src/img/camara-gamer.png",
+            cantidad: 1
         },
 
         {
@@ -29,6 +30,7 @@
             nombre: "Monitor",
             precio: 5000,
             img: "src/img/monitor-gamer.jpg",
+            cantidad: 1
         },
 
         {
@@ -36,6 +38,7 @@
             nombre: "Tarjeta gráfica",
             precio: 5000,
             img: "src/img/tarjeta-grafica.png",
+            cantidad: 1
         },
 
         {
@@ -50,6 +53,7 @@
             nombre: "Ariculares",
             pracio: 5000,
             img: "src/img/auriculares-gamer.png",
+            cantidad: 1
         },
 
         {
@@ -57,6 +61,7 @@
             nombre: "Mouse",
             precio: 5000,
             img: "src/img/mouse-gamer.png",
+            cantidad: 1
         },
 
         {
@@ -64,6 +69,7 @@
             nombre: "Teclado",
             precio: 5000,
             img: "src/img/teclado-gamer.png",
+            cantidad: 1
         },
 
         {
@@ -71,6 +77,7 @@
             nombre: "Gabinete",
             precio: 5000,
             img: "src/img/gabinete-gamer.png",
+            cantidad: 1
         }
     ]
 
@@ -113,13 +120,18 @@
             listaCarrito.style.display = ('block');
             listaCarrito.innerHTML = "";
             carrito.forEach((prod) =>{
-                const {id, nombre, precio, img} = prod;
+                let {id, nombre, precio, img, cantidad} = prod;
+                if(id == id){             
+                }
                 listaCarrito.innerHTML += `
                 <div class="carrito">
                     <img src="${img}" alt="Monitor Gamer">
                     <div class="content_detalle-producto">
                         <p>${nombre}</p>
+                        <div class="content_precio">
                         <p>$${precio}</p>
+                        <p>X${cantidad}</ddp>
+                        </div>
                     </div>
                     <div class="content_boton-borrar-producto">
                         <i class="fa-solid fa-trash trash" onclick="eliminarProducto(${id})"></i>
@@ -127,7 +139,9 @@
                     <hr>
                 </div>
                 <hr>
-                ` 
+                `
+
+                
             })
         }
     }
@@ -150,16 +164,10 @@
         }, 1000)
     }
 
-    function eliminarProducto(){
-        for(let i = 0; i < carrito.length; i++){
-            carrito = carrito.filter((i) =>{
-                if(i !== i){
-                    mostrarProductos();
-                }
-            })
-        }
+    function eliminarProducto(id){
+        const idProducto = id;
+        carrito = carrito.filter((producto) => producto.id !== idProducto)
+        mostrarProductos();
     }
 
-    // const idProducto = id;
-    // carrito = carrito.filter((idProducto) => idProducto.id !== idProducto)
-    // mostrarProductos();
+    
