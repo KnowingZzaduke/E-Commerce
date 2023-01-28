@@ -114,7 +114,6 @@
             const prod = carrito.map((prod) => {
                 if(prod.id === id){
                     prod.cantidad++
-                    console.log(prod.cantidad)
                 }
             })
         }else{
@@ -123,6 +122,9 @@
         }
         mostrarProductos()
     };
+
+    
+
 
     function mostrarProductos(){
         if(listaCarrito){
@@ -152,6 +154,12 @@
             })
         }
     }
+
+    function calcularValorProductos(){
+        
+    }
+
+    calcularValorProductos();
 
     function vaciarCarrito(){
         carrito.length = [];
