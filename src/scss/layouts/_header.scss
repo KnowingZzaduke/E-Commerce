@@ -118,9 +118,12 @@ header{
                 left: 70%;
                 margin-top: 1rem;
                 border-radius: 10px;
-                width: 400px;
+                width: 350px;
                 display: block;
-                height: auto;
+                box-shadow: 0 0 20px 2px v.$gris;
+                overflow-y: scroll;
+                overflow-x: hidden;
+
                 p{
                     text-align: center;
                     font-size: 2rem;
@@ -135,32 +138,32 @@ header{
                         padding: 10px;
                         justify-content: center;
                         text-align: center;
-                        border: 2px solid v.$azulClaro;
                         margin: 1rem;
                         border-radius: 10px;
                         img{
                             border-radius: 10px;
-                            width: 150px;
-                            height: 150px;
+                            width: 100px;
+                            height: 100px;
                             object-fit: cover;
                         }
 
                         .content_detalle-producto{
                             p{
                                 font-size: 1.2rem;
-                            }
-                        }
-
-                        .content_precio{
-                            display: flex;
-                            p{
-                                padding: 10px;
+                                font-weight: 600;
+                                
+                                :first-child{
+                                    color: v.$verde;
+                                }
+                                
+                                
                             }
                         }
 
                         .content_boton-borrar-producto{
                             .trash{
                                 transition: .25s ease;
+                                color: v.$gris;
                                 &:hover{
                                     color: v.$azulClaro;
                                     cursor: pointer;
@@ -168,9 +171,16 @@ header{
                                 }
                             }
                         }
+
+                        
                     }
                 }
-    
+
+                hr{
+                    width: 90%;
+                    margin: 0% auto;
+                }
+
                 .content_boton-vaciar-carrito{
                     text-align: center;
                     display: flex;
@@ -182,9 +192,10 @@ header{
                         border-radius: 10px;
                         background-color: v.$azulClaro;
                         color: v.$blanco;
+                        font-weight: 900;
                         transition: .25s ease;
                         padding: 5px;
-                        padding: 10px;
+                        padding: 20px 80px;
                         &:hover{
                             transform: scale(1.1);
                             cursor: pointer;

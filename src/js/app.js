@@ -19,7 +19,7 @@
     const arrayProducto = [
         {
             id: 1,
-            nombre: "Camara",
+            nombre: "Cámara",
             precio: 5000,
             img: "src/img/camara-gamer.jpg",
             cantidad: 1
@@ -139,16 +139,17 @@
 
                 listaCarrito.innerHTML += `
                 <div class="carrito">
+                    <div class="content_imagen-carrito">
                     <img src="${img}" alt="Monitor Gamer">
+                    </div>
                     <div class="content_detalle-producto">
-                        <p>${nombre}</p>
-                        <div class="content_precio">
-                        <p>$${precio}</p>
-                        <p>X${cantidad}</p>
-                        </div>
+                        <p>${nombre}
+                            <span>$${precio}</span>
+                            <span>X${cantidad}</span>
+                        </p>
                     </div>
                     <div class="content_boton-borrar-producto">
-                        <i class="fa-solid fa-trash trash" onclick="eliminarProducto(${id})"></i>
+                        <i class="fa-solid fa-trash trash" onclick="eliminarProducto(${id})" title="Borrar"></i>
                     </div>
                     <hr>
                 </div>
@@ -171,7 +172,7 @@
         if(carrito.length == []){
             setTimeout(() =>{
                 contentListaProductos.style.display = ('none');
-            }, 500)
+            }, 0)
         }else{
             mostrarProductos();
         }

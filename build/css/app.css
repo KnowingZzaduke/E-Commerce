@@ -445,9 +445,11 @@ header {
   left: 70%;
   margin-top: 1rem;
   border-radius: 10px;
-  width: 400px;
+  width: 350px;
   display: block;
-  height: auto;
+  box-shadow: 0 0 20px 2px #B2BABB;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 .navbar .navbar_right .link .content_lista-carrito p {
   text-align: center;
@@ -461,32 +463,34 @@ header {
   padding: 10px;
   justify-content: center;
   text-align: center;
-  border: 2px solid #34495E;
   margin: 1rem;
   border-radius: 10px;
 }
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito img {
   border-radius: 10px;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
 }
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_detalle-producto p {
   font-size: 1.2rem;
+  font-weight: 600;
 }
-.navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_precio {
-  display: flex;
-}
-.navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_precio p {
-  padding: 10px;
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_detalle-producto p :first-child {
+  color: #42ff33;
 }
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_boton-borrar-producto .trash {
   transition: 0.25s ease;
+  color: #B2BABB;
 }
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_boton-borrar-producto .trash:hover {
   color: #34495E;
   cursor: pointer;
   transform: scale(1.1);
+}
+.navbar .navbar_right .link .content_lista-carrito hr {
+  width: 90%;
+  margin: 0% auto;
 }
 .navbar .navbar_right .link .content_lista-carrito .content_boton-vaciar-carrito {
   text-align: center;
@@ -500,9 +504,10 @@ header {
   border-radius: 10px;
   background-color: #34495E;
   color: white;
+  font-weight: 900;
   transition: 0.25s ease;
   padding: 5px;
-  padding: 10px;
+  padding: 20px 80px;
 }
 .navbar .navbar_right .link .content_lista-carrito .content_boton-vaciar-carrito button:hover {
   transform: scale(1.1);
