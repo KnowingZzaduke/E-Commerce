@@ -468,6 +468,8 @@ header {
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito img {
   border-radius: 10px;
   width: 150px;
+  height: 150px;
+  object-fit: cover;
 }
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito .content_detalle-producto p {
   font-size: 1.2rem;
@@ -800,10 +802,16 @@ header {
 .section_productos-populares .content_productos .producto {
   border: 1px solid #34495E;
   border-radius: 10px;
-  height: 260px;
-  width: 325px;
+  height: 360px;
+  width: 305px;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 0 10px 1px #34495E;
+  transition: 0.25s ease;
+}
+.section_productos-populares .content_productos .producto:hover {
+  box-shadow: 0 0 20px 3px #34495E;
+  transform: scale(0.9);
 }
 .section_productos-populares .content_productos .producto:hover .content_detalles-producto {
   height: 60px;
@@ -813,15 +821,23 @@ header {
 }
 .section_productos-populares .content_productos .producto img {
   width: 325px;
-  height: 170px;
+  height: 270px;
   display: block;
   text-align: center;
+  box-shadow: 0 0 10px 2px #34495E;
+  object-fit: cover;
 }
 .section_productos-populares .content_productos .producto .content_parrafos-detalle-producto {
   transition: 0.3s ease;
 }
 .section_productos-populares .content_productos .producto .nombre_producto {
   color: #34495E;
+  font-size: 1.2rem;
+  font-weight: 900;
+}
+.section_productos-populares .content_productos .producto .precio_producto {
+  color: #42ff33;
+  font-weight: 900;
   font-size: 1.2rem;
 }
 .section_productos-populares .content_productos .producto .content_detalles-producto {
@@ -841,6 +857,7 @@ header {
   height: 40px;
   color: white;
   transition: 0.25s ease;
+  font-weight: 900;
 }
 .section_productos-populares .content_productos .producto .content_detalles-producto .content_botones button:hover {
   cursor: pointer;

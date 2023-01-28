@@ -43,15 +43,16 @@
 
         {
             id: 4,
-            nombre: "Controles",
+            nombre: "Control Xbox",
             precio: 5000,
             img: "src/img/mando-xbox.jpg",
+            cantidad: 1
         },
 
         {
             id: 5,
-            nombre: "Ariculares",
-            pracio: 5000,
+            nombre: "Auriculares",
+            precio: 5000,
             img: "src/img/auriculares-gamer.jpg",
             cantidad: 1
         },
@@ -88,6 +89,7 @@
     const botonVaciarCarrito = document.querySelector('.vaciar');
     const contentBotonVaciarCarrito = document.querySelector('.content_boton-vaciar-carrito');
     const valorTotal = document.querySelector('.valor');
+
     arrayProducto.forEach((prod) =>{
         const {id, nombre, precio, img} = prod;
         contentCarrito.innerHTML +=`
@@ -121,6 +123,7 @@
             carrito.push(item)
         }
         mostrarProductos()
+        calcularValorProductos();
     };
 
     
@@ -155,15 +158,11 @@
         }
     }
 
-    function calcularValorProductos(){
+    function calcularValorProductos(vaciarCarrito){
         if(valorTotal){
-            valorTotal.innerHTML = carrito.reduce(function(total, prod){
-                return total + prod.cantidad * prod.precio
-            }, 0)
+            valorTotal.innerHTML = carrito.reduce((total, prod) => total + prod.cantidad * prod.precio, 0);
         }
     }
-
-    calcularValorProductos();
 
 
     function vaciarCarrito(){

@@ -256,13 +256,16 @@
         .producto{
             border: 1px solid v.$azulClaro;
             border-radius: 10px;
-            height: 260px;
-            width: 325px;
+            height: 360px;
+            width: 305px;
             position: relative;
             overflow: hidden;
-
+            box-shadow: 0 0 10px 1px v.$azulClaro;
+            transition: .25s ease;
 
             &:hover{
+                box-shadow: 0 0 20px 3px v.$azulClaro;
+                transform: scale(0.9);
                 .content_detalles-producto{
                     height: 60px;
                 }
@@ -273,9 +276,11 @@
 
             img{
                 width: 325px;
-                height: 170px;
+                height: 270px;
                 display: block;
                 text-align: center;
+                box-shadow: 0 0 10px 2px v.$azulClaro;
+                object-fit: cover;
             }
 
             .content_parrafos-detalle-producto{
@@ -284,6 +289,13 @@
 
             .nombre_producto{
                 color: v.$azulClaro;
+                font-size: 1.2rem;
+                font-weight: 900;
+            }
+
+            .precio_producto{
+                color: v.$verde;
+                font-weight: 900;
                 font-size: 1.2rem;
             }
 
@@ -306,6 +318,7 @@
                         height: 40px;
                         color: v.$blanco;
                         transition: .25s ease;
+                        font-weight: 900;
                         &:hover{
                             cursor: pointer;
                             transform: scale(1.1);
