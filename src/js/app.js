@@ -21,7 +21,7 @@
             id: 1,
             nombre: "Camara",
             precio: 5000,
-            img: "src/img/camara-gamer.png",
+            img: "src/img/camara-gamer.jpg",
             cantidad: 1
         },
 
@@ -37,7 +37,7 @@
             id: 3,
             nombre: "Tarjeta gráfica",
             precio: 5000,
-            img: "src/img/tarjeta-grafica.png",
+            img: "src/img/tarjeta-grafica.jpg",
             cantidad: 1
         },
 
@@ -45,14 +45,14 @@
             id: 4,
             nombre: "Controles",
             precio: 5000,
-            img: "src/img/control-xbox.png",
+            img: "src/img/mando-xbox.jpg",
         },
 
         {
             id: 5,
             nombre: "Ariculares",
             pracio: 5000,
-            img: "src/img/auriculares-gamer.png",
+            img: "src/img/auriculares-gamer.jpg",
             cantidad: 1
         },
 
@@ -60,7 +60,7 @@
             id: 6,
             nombre: "Mouse",
             precio: 5000,
-            img: "src/img/mouse-gamer.png",
+            img: "src/img/mouse-gamer.jpg",
             cantidad: 1
         },
 
@@ -68,7 +68,7 @@
             id: 7,
             nombre: "Teclado",
             precio: 5000,
-            img: "src/img/teclado-gamer.png",
+            img: "src/img/teclado-gamer.jpg",
             cantidad: 1
         },
 
@@ -76,7 +76,7 @@
             id: 8,
             nombre: "Gabinete",
             precio: 5000,
-            img: "src/img/gabinete-gamer.png",
+            img: "src/img/carcasa-gamer.jpg",
             cantidad: 1
         }
     ]
@@ -87,7 +87,7 @@
     const listaCarrito = document.querySelector('.lista_carrito');
     const botonVaciarCarrito = document.querySelector('.vaciar');
     const contentBotonVaciarCarrito = document.querySelector('.content_boton-vaciar-carrito');
-
+    const valorTotal = document.querySelector('.valor');
     arrayProducto.forEach((prod) =>{
         const {id, nombre, precio, img} = prod;
         contentCarrito.innerHTML +=`
@@ -156,10 +156,15 @@
     }
 
     function calcularValorProductos(){
-        
+        if(valorTotal){
+            valorTotal.innerHTML = carrito.reduce(function(total, prod){
+                return total + prod.cantidad * prod.precio
+            }, 0)
+        }
     }
 
     calcularValorProductos();
+
 
     function vaciarCarrito(){
         carrito.length = [];
