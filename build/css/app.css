@@ -442,7 +442,7 @@ header {
   cursor: pointer;
 }
 .navbar .navbar_right .link .content_lista-carrito {
-  background-color: #F5B041;
+  background-color: white;
   position: absolute;
   left: 70%;
   margin-top: 1rem;
@@ -455,6 +455,17 @@ header {
   text-align: center;
   font-size: 2rem;
   color: #34495E;
+}
+.navbar .navbar_right .link .content_lista-carrito .cerrar_carrito {
+  color: black;
+  width: 95%;
+  font-size: 25px;
+  margin: 0%;
+  padding: 10px;
+  text-align: end;
+}
+.navbar .navbar_right .link .content_lista-carrito .cerrar_carrito:hover {
+  cursor: pointer;
 }
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito {
   height: auto;

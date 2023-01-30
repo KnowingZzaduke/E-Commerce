@@ -115,7 +115,7 @@ header{
             }
 
             .content_lista-carrito{
-                background-color: v.$amarillo;
+                background-color: v.$blanco;
                 position: absolute;
                 left: 70%;
                 margin-top: 1rem;
@@ -129,7 +129,19 @@ header{
                     font-size: 2rem;
                     color: v.$azulClaro;
                 }
-                
+                .cerrar_carrito{
+                    color: v.$negro;
+                    width: 95%;
+                    font-size: 25px;
+                    margin: 0%;
+                    padding: 10px;
+                    text-align: end;
+
+                    &:hover{
+                        cursor: pointer;
+                    }
+                    
+                }
                 .lista_carrito{
                     height: auto;
                     &::-webkit-scrollbar {
