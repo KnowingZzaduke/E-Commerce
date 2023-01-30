@@ -137,7 +137,7 @@
     
 
 
-    function mostrarProductos(){
+    function mostrarProductos   (){
         if(listaCarrito){
             contentListaProductos.style.display = ('block')
             listaCarrito.style.display = ('block');
@@ -195,7 +195,12 @@
     function mostrarAlerta(){
         if(carrito.length == []){
             setTimeout(() =>{
-                alert("Tu carrito se encuentra vació, por favor agrega productos");         
+                swal({
+                    title: "¡Tu carrio se encuenta vacío! por favor agrega productos",
+                    icon: "warning",
+                    button: "Ok",
+                    dangerMode: true
+                });
             }, 1000);
         } 
     }
@@ -205,5 +210,7 @@
         carrito = carrito.filter((producto) => producto.id !== idProducto);
         mostrarProductos();
     }
+
+    
 
     

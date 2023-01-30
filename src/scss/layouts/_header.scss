@@ -112,14 +112,6 @@ header{
                         cursor: pointer;
                     }
                 }
-
-                p{
-                    color: v.$blanco;
-                    &:hover{
-                        color: v.$amarillo;
-                        cursor: pointer;
-                    }
-                }
             }
 
             .content_lista-carrito{
