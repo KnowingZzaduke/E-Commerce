@@ -1,3 +1,4 @@
+const { default: swal } = require("sweetalert");
 
     const toggleAbrir = document.querySelector('.abrir');
     const toggleCerrar = document.querySelector('.cerrar_menu')
@@ -102,7 +103,7 @@
             <div class="content_detalles-producto";">
                 <div class="content_botones">
                     <button type="button" class="boton_agregar-carrito" onclick="agregarProducto(${id})">Agregar al carrito</button>   
-                    <button type="button" class="boton_visualizar"><i class="fa-solid fa-eye"></i></button>
+                    <button type="button" class="boton_visualizar" onclick="modalImage()"><i class="fa-solid fa-eye"></i></button>
                 </div>
             </div>
         </div>
@@ -121,15 +122,15 @@
         }else{
             const item = arrayProducto.find((prod) => prod.id === id)
             carrito.push(item);
+
             if(carrito.length > 1){
                 agregarScroll()
-            }
-        }
+            }     
+        }  
+
         mostrarProductos()
         calcularValorProductos();
     };
-
-    
 
 
     function mostrarProductos(){
@@ -167,23 +168,19 @@
     }
     crearX();
 
-
-
-
     function calcularValorProductos(){
         if(valorTotal){
             valorTotal.innerHTML = carrito.reduce((total, prod) => total + prod.cantidad * prod.precio, 0);
         }
     }
 
-
     function vaciarCarrito(){
         carrito.length = [];
         listaCarrito.style.display= ('none');
         if(carrito.length == []){
-            setTimeout(() =>{
-                contentListaProductos.style.display = ('none');
-            }, 0)
+            contentListaProductos.style.display = ('none');
+            quitarScroll();
+            
         }else{
             mostrarProductos();
         }
@@ -191,12 +188,13 @@
 
     function agregarScroll(){
         listaCarrito.style.overflowY = "scroll";
-        listaCarrito.style.height = "300px"
+        listaCarrito.style.height = "300px";
     }
 
-    // function quitarScroll(){
-    //     listaCarrito.style.height = "auto";
-    // }
+    function quitarScroll(){
+        listaCarrito.style.overflowY = "hidden";
+        listaCarrito.style.height = "auto";
+    }
 
     function mostrarAlerta(){
         if(carrito.length == 0){
@@ -217,6 +215,10 @@
         const idProducto = id;
         carrito = carrito.filter((producto) => producto.id !== idProducto);
         mostrarProductos();
+        if(carrito.length === 0){
+            contentListaProductos.style.display = ('none');
+            quitarScroll();
+        }
     }
 
     //CERRAR CARRITO
@@ -224,4 +226,4 @@
         contentListaProductos.style.display = ('none');
     }
 
-    
+        
