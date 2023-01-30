@@ -129,10 +129,37 @@ header{
                     font-size: 2rem;
                     color: v.$azulClaro;
                 }
-
+                
                 .lista_carrito{
-                    height: 300px;
-                    overflow-y: scroll;
+                    height: auto;
+
+                    &::-webkit-scrollbar {
+                        -webkit-appearance: none;
+                        -moz-appearance: none;
+                    }
+
+                    &::-webkit-scrollbar:vertical {
+                        width: 13px;
+                    }
+
+                    &::-webkit-scrollbar-button:increment,.lista_carrito::-webkit-scrollbar-button {
+                        display: none;
+                    } 
+
+                    &::-webkit-scrollbar:horizontal {
+                        height: 10px;
+                    }
+                    
+                    &::-webkit-scrollbar-thumb {
+                        background-color: #797979;
+                        border-radius: 20px;
+                        border: 2px solid #f1f2f3;
+                    }
+
+                    &::-webkit-scrollbar-track {
+                        border-radius: 10px;  
+                    }
+
                     .carrito{
                         display: grid;
                         grid-template-columns: repeat(3, 1fr);

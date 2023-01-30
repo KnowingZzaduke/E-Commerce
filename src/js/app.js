@@ -122,13 +122,19 @@
             const item = arrayProducto.find((prod) => prod.id === id)
             carrito.push(item)
 
-            // if(carrito.length > 1){
-            //     agregarScroll();
-            // }
+            switch(carrito.length){
+                case " 1":
+                    mostrarAlerta()
+                    break;
+                
+                case "> 1":
+                    agregarScroll();
+                    break;
 
-            if(carrito.length){
-                mostrarAlerta();
-            }
+                case "< 1":
+                    quitarScroll();
+                    break
+            }   
         }
         mostrarProductos()
         calcularValorProductos();

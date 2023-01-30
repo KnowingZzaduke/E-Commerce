@@ -457,8 +457,28 @@ header {
   color: #34495E;
 }
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito {
-  height: 300px;
-  overflow-y: scroll;
+  height: auto;
+}
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito::-webkit-scrollbar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito::-webkit-scrollbar:vertical {
+  width: 13px;
+}
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito::-webkit-scrollbar-button:increment, .navbar .navbar_right .link .content_lista-carrito .lista_carrito .lista_carrito::-webkit-scrollbar-button {
+  display: none;
+}
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito::-webkit-scrollbar:horizontal {
+  height: 10px;
+}
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito::-webkit-scrollbar-thumb {
+  background-color: #797979;
+  border-radius: 20px;
+  border: 2px solid #f1f2f3;
+}
+.navbar .navbar_right .link .content_lista-carrito .lista_carrito::-webkit-scrollbar-track {
+  border-radius: 10px;
 }
 .navbar .navbar_right .link .content_lista-carrito .lista_carrito .carrito {
   display: grid;
