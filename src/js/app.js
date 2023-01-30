@@ -120,22 +120,11 @@
             })
         }else{
             const item = arrayProducto.find((prod) => prod.id === id)
-            carrito.push(item)
-
-            switch(carrito.length){
-                case " 1":
-                    mostrarAlerta()
-                    break;
-                
-                case "> 1":
-                    agregarScroll();
-                    break;
-
-                case "< 1":
-                    quitarScroll();
-                    break
-            }   
-        }
+            carrito.push(item);
+            if(carrito.length > 1){
+                agregarScroll()
+            }
+            }
         mostrarProductos()
         calcularValorProductos();
     };
@@ -173,7 +162,7 @@
         }
     }
 
-    function calcularValorProductos(vaciarCarrito){
+    function calcularValorProductos(){
         if(valorTotal){
             valorTotal.innerHTML = carrito.reduce((total, prod) => total + prod.cantidad * prod.precio, 0);
         }
@@ -197,10 +186,9 @@
         listaCarrito.style.height = "300px"
     }
 
-    function quitarScroll(){
-        listaCarrito.style.overflowY = "hidden";
-        listaCarrito.style.height = "auto";
-    }
+    // function quitarScroll(){
+    //     listaCarrito.style.height = "auto";
+    // }
 
     function mostrarAlerta(){
         if(carrito.length == []){
@@ -212,7 +200,9 @@
                     dangerMode: true
                 });
             }, 1000);
-        } 
+        }else{
+            contentListaProductos.style.display = ('block');
+        }
     }
 
     function eliminarProducto(id){
