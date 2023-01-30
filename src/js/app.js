@@ -137,7 +137,7 @@
     
 
 
-    function mostrarProductos   (){
+    function mostrarProductos(){
         if(listaCarrito){
             contentListaProductos.style.display = ('block')
             listaCarrito.style.display = ('block');
@@ -186,11 +186,15 @@
         }
     }
 
-    // function agregarScroll(){
-    //     listaCarrito.style.overflowY = "scroll";
-    //     listaCarrito.style.height = "300px"
-    //     listaCarrito.classList.add('lista_carrito-scroll');
-    // }
+    function agregarScroll(){
+        listaCarrito.style.overflowY = "scroll";
+        listaCarrito.style.height = "300px"
+    }
+
+    function quitarScroll(){
+        listaCarrito.style.overflowY = "hidden";
+        listaCarrito.style.height = "auto";
+    }
 
     function mostrarAlerta(){
         if(carrito.length == []){
