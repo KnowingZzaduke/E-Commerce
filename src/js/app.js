@@ -1,4 +1,4 @@
-const { default: swal } = require("sweetalert");
+
 
     const toggleAbrir = document.querySelector('.abrir');
     const toggleCerrar = document.querySelector('.cerrar_menu')
@@ -17,7 +17,7 @@ const { default: swal } = require("sweetalert");
     })
 
     //Array de objetos que contiene los productos
-    const arrayProducto = [
+    let arrayProducto = [
         {
             id: 1,
             nombre: "Cámara",
@@ -103,12 +103,26 @@ const { default: swal } = require("sweetalert");
             <div class="content_detalles-producto";">
                 <div class="content_botones">
                     <button type="button" class="boton_agregar-carrito" onclick="agregarProducto(${id})">Agregar al carrito</button>   
-                    <button type="button" class="boton_visualizar" onclick="modalImage()"><i class="fa-solid fa-eye"></i></button>
+                    <button type="button" class="boton_visualizar" onclick="modalImage('${img}')"><i class="fa-solid fa-eye"></i></button>
                 </div>
             </div>
         </div>
         `
     })
+
+    function modalImage(img){
+        const item = arrayProducto.find((prod) => prod.img === img);
+        const nombreProducto = item.nombre;
+        console.log(nombreProducto);
+        if(item){
+            swal({
+                title: `${nombreProducto}`,
+                icon: `${img}`,
+                button: "Cerrar",
+            })
+        }
+    }
+
 
     //FUNCIÓN PARA AGREGAR PRODUCTOS AL CARRITO
     const agregarProducto = (id) => {
@@ -224,6 +238,4 @@ const { default: swal } = require("sweetalert");
     //CERRAR CARRITO
     function cerrarCarrito(){
         contentListaProductos.style.display = ('none');
-    }
-
-        
+    } 

@@ -144,6 +144,9 @@ header{
                 }
                 .lista_carrito{
                     height: auto;
+                    scrollbar-color: v.$gris white;
+                    scrollbar-gutter: stable both-edges;
+                    scrollbar-width: thin;
                     &::-webkit-scrollbar {
                         -webkit-appearance: none;
                         -moz-appearance: none;

@@ -1,7 +1,25 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
+.swal-icon{
+    img{
+        width: 430px;
+        border-radius: 10px;
+        height: 345px;
+        object-fit: cover;
+    }
+}
 
+.swal-button-container{
+    button{
+        background-color: v.$rojo;
+        transition: .25s ease;
+        &:hover{
+            transform: scale(1.1);
+            background-color: v.$rojo;
+        }
+    }
+}
 //SECCIÓN PRODUCTOS EN DESCUENTO
 .section_productos-en-descuento{
     display: grid;
@@ -89,7 +107,7 @@
     }
 }
 
-//PRIMERA SECCIÓN VERSIÓN TELÉFONO, TABLET Y ESCRITORIO
+//SECCIÓN PRODCUTOS EN DESCUENTO VERSIÓN TELÉFONO, TABLET Y ESCRITORIO
 @include m.phone{
     .section_productos-en-descuento{
         height: auto;
@@ -364,7 +382,7 @@
                 margin-top: 2rem;
                 margin: 1rem auto;
                 width: 90%;
-                height: 320px;
+                height: auto;
 
                 img{
                     width: 100%;
@@ -374,14 +392,12 @@
                     .content_parrafos-detalle-producto{
                         display: block;
                     }
-
-                    .content_detalles-producto{
-                        height: auto;
-                    }
                 }
 
                 .content_detalles-producto{
                     height: auto;
+                    position: relative;
+                    bottom: auto;
                     .content_botones{
                         margin-bottom: 1rem;
                     }
@@ -414,8 +430,8 @@
             .producto{
                 margin-top: 2rem;
                 margin: 1rem auto;
-                width: 90%;
-                height: 320px;
+                width: 70%;
+                height: auto;
 
                 img{
                     width: 100%;
@@ -427,13 +443,12 @@
                         display: block;
                     }
 
-                    .content_detalles-producto{
-                        height: auto;
-                    }
                 }
 
                 .content_detalles-producto{
                     height: auto;
+                    position: relative;
+                    bottom: auto;
                     .content_botones{
                         margin-bottom: 1rem;
                     }
@@ -472,7 +487,7 @@
                 margin-top: 2rem;
                 margin: 1rem auto;
                 width: 90%;
-                height: 320px;
+                height: auto;
 
                 img{
                     width: 100%;
@@ -483,14 +498,12 @@
                     .content_parrafos-detalle-producto{
                         display: block;
                     }
-
-                    .content_detalles-producto{
-                        height: auto;
-                    }
                 }
 
                 .content_detalles-producto{
                     height: auto;
+                    position: relative;
+                    bottom: auto;
                     .content_botones{
                         margin-bottom: 1rem;
                     }
@@ -510,7 +523,7 @@
             margin-top: 2rem;
             margin: 1rem auto;
             width: 90%;
-            height: 320px;
+            height: auto;
 
             img{
                 width: 100%;
@@ -521,14 +534,12 @@
                 .content_parrafos-detalle-producto{
                     display: block;
                 }
-
-                .content_detalles-producto{
-                    height: auto;
-                }
             }
 
             .content_detalles-producto{
                 height: auto;
+                position: relative;
+                bottom: auto;
                 .content_botones{
                     margin-bottom: 1rem;
                 }
@@ -606,7 +617,7 @@
     }
 }
 
-//SECCIÓN PRODUCTOS POPULARES VERSIÓN TELÉFONO, TABLET Y ESCRITORIO
+//SECCIÓN PRODUCTOS MITDAD PRECIOVERSIÓN TELÉFONO, TABLET Y ESCRITORIO
 @include m.phone{
     .section_producto-mitad-precio{
         .content_producto-mitad-precio{
