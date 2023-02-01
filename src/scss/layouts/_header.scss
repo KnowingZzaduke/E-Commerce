@@ -281,6 +281,12 @@ header{
                     left: 0%;
                     margin: 2rem auto;
                     width: 70%;
+
+                    .content_boton-vaciar-carrito{
+                        button{
+                            width: 85%;
+                        }
+                    }
                 }
             }
         }
@@ -307,6 +313,12 @@ header{
                     left: 0%;
                     margin: 2rem auto;
                     width: 60%;
+
+                    .content_boton-vaciar-carrito{
+                        button{
+                            width: 85%;
+                        }
+                    }
                 }
             }
         }
