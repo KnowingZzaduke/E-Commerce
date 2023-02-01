@@ -1,12 +1,26 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 
+.swal-modal{
+    @include m.phone{
+        width: 90%;
+    }
+}
 .swal-icon{
     img{
         width: 430px;
         border-radius: 10px;
         height: 345px;
         object-fit: cover;
+
+        @include m.phone{
+            width: 90%;
+            height: 90%;
+        }
+        @include m.tablet{
+            width: 90%;
+            height: 90%;
+        }
     }
 }
 

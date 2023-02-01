@@ -116,7 +116,11 @@
         if(existe){
             const prod = carrito.map((prod) => {
                 if(prod.id === id){
-                    prod.cantidad++
+                    prod.cantidad++;
+
+                    if(carrito.length === 0){
+                    return prod.cantidad = 0;
+                }
                 }
             })
         }else{
@@ -179,7 +183,6 @@
         if(carrito.length == []){
             contentListaProductos.style.display = ('none');
             quitarScroll();
-            
         }else{
             mostrarProductos();
         }
@@ -214,6 +217,7 @@
         const idProducto = id;
         carrito = carrito.filter((producto) => producto.id !== idProducto);
         mostrarProductos();
+        console.log(carrito.length)
         if(carrito.length === 0){
             contentListaProductos.style.display = ('none');
             quitarScroll();
