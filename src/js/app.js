@@ -179,10 +179,10 @@
                     <hr>
                     `
                 }else{
-                    contentListaProductosPhone.style.display = ('block')
-                    listaCarritoPhone.style.display = ('block');
                     contentListaProductos.style.display = ('none')
                     listaCarrito.style.display = ('none');
+                    contentListaProductosPhone.style.display = ('block')
+                    listaCarritoPhone.style.display = ('block');
                     listaCarritoPhone.innerHTML +=`
                     <div class="carrito">
                         <div class="content_imagen-carrito">
