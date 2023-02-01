@@ -9,151 +9,13 @@ header{
     .content_lista-carrito-phone{
         display: none;
     }
-
-    @include m.phone{
-        .content_lista-carrito-phone{
-            display: block;
-                z-index: -1;
-                background-color: v.$blanco;
-                position: absolute;
-                left: 15%;
-                margin-top: 1rem;
-                border-radius: 10px;
-                width: 350px;
-                display: block;
-                box-shadow: 0 0 20px 2px v.$gris;
-
-                @include m.phone{
-                    display: block;
-                }
-
-                p{
-                    text-align: center;
-                    font-size: 2rem;
-                    color: v.$azulClaro;
-                }
-                .cerrar_carrito{
-                    color: v.$negro;
-                    width: 95%;
-                    font-size: 25px;
-                    margin: 0%;
-                    padding: 10px;
-                    text-align: end;
-
-                    &:hover{
-                        cursor: pointer;
-                    }
-                    
-                }
-                .lista_carrito-phone{
-                    height: auto;
-                    scrollbar-color: v.$gris white;
-                    scrollbar-gutter: stable both-edges;
-                    scrollbar-width: thin;
-                    &::-webkit-scrollbar {
-                        -webkit-appearance: none;
-                        -moz-appearance: none;
-                    }
-
-                    &::-webkit-scrollbar:vertical {
-                        width: 13px;
-                    }
-
-                    &::-webkit-scrollbar-button:increment,.lista_carrito::-webkit-scrollbar-button {
-                        display: none;
-                    } 
-
-                    &::-webkit-scrollbar:horizontal {
-                        height: 10px;
-                    }
-                    
-                    &::-webkit-scrollbar-thumb {
-                        background-color: #797979;
-                        border-radius: 20px;
-                        border: 2px solid #f1f2f3;
-                    }
-
-                    &::-webkit-scrollbar-track {
-                        border-radius: 10px;  
-                    }
-
-                    .carrito{
-                        display: grid;
-                        grid-template-columns: repeat(3, 1fr);
-                        align-items: center;
-                        padding: 10px;
-                        justify-content: center;
-                        text-align: center;
-                        margin: 1rem;
-                        border-radius: 10px;
-                        img{
-                            border-radius: 10px;
-                            width: 100px;
-                            height: 100px;
-                            object-fit: cover;
-                        }
-
-                        .content_detalle-producto{
-                            p{
-                                font-size: 1.2rem;
-                                font-weight: 600;
-                                
-                                :first-child{
-                                    color: v.$verde;
-                                }
-                                
-                                
-                            }
-                        }
-
-                        .content_boton-borrar-producto{
-                            .trash{
-                                transition: .25s ease;
-                                color: v.$gris;
-                                &:hover{
-                                    color: v.$azulClaro;
-                                    cursor: pointer;
-                                    transform: scale(1.1);
-                                }
-                            }
-                        }              
-                    }
-                }
-
-                hr{
-                    width: 90%;
-                    margin: 0% auto;
-                }
-
-                .content_boton-vaciar-carrito{
-                    text-align: center;
-                    display: flex;
-                    justify-content: center;
-                    button{
-                        margin-bottom: 1rem;
-                        margin-top: 1rem;
-                        border: none;
-                        border-radius: 10px;
-                        background-color: v.$azulClaro;
-                        color: v.$blanco;
-                        font-weight: 900;
-                        transition: .25s ease;
-                        padding: 5px;
-                        padding: 20px 80px;
-                        &:hover{
-                            transform: scale(1.1);
-                            cursor: pointer;
-                        }
-                    }
-                }
-    }
-    }
 }
 .navbar{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    justify-content: center;
 
     .navbar_left{
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -167,14 +29,6 @@ header{
             h2{
                 color: v.$blanco;
             }
-
-            @include m.phone{
-                display: none;
-            }
-
-            @include m.tablet{
-                display: none;
-            }
         }
 
         .content_buscador{
@@ -184,22 +38,10 @@ header{
                 width: 350px;
                 height: 40px;
                 border: none;
-
-                @include m.phone{
-                    width: 160px;
-                }
-
-                @include m.tablet{
-                    width: 300px;
-                }
             }
 
             ::placeholder{
                 text-align: center;
-
-                @include m.phone{
-                    font-size: 13px;
-                }
             }
 
             button{
@@ -214,23 +56,15 @@ header{
                 &:hover{
                     cursor: pointer;
                 }
-
-                @include m.phone{
-                    right: 12px;
-                    
-                }
             }
         }
     }
 
     .navbar_right{
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-
-        @include m.phone{
-            display: none;
-        }
 
         i{
             color: v.$blanco;
@@ -265,10 +99,6 @@ header{
                 width: 350px;
                 display: block;
                 box-shadow: 0 0 20px 2px v.$gris;
-
-                @include m.phone{
-                    display: block;
-                }
 
                 p{
                     text-align: center;
@@ -420,84 +250,87 @@ header{
             }
         }
     }
+}
 
-    .content_toggle-menu{
-        display: none;
-
-        @include m.phone{
-            display: block;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-
-            i{
-                color: v.$blanco;
-                margin-top: 1.3rem;
-                font-size: 2rem;
-
-                &:hover{
-                    cursor: pointer;
-                    color: v.$amarillo;
-                }
+//VERSIÓN NAVBAR VERSIÓN TELÉFONO, TABLET Y ESCRITORIO
+.navbar{
+    @include m.phone{
+        .navbar_left{
+            .content_logo{
+                display: none;
             }
 
-            .content_lista-menu{
-                position: fixed;
-                top: 0%;
-                bottom: 0%;
-                right: 0%;
-                width: 180px;
-                background-color: v.$negro;
-                visibility: inherit;
-
-                .content_toggle-cerrar{
-                    display: flex;
-                    justify-content: center;
-
-                    p{
-                        color: v.$blanco;
-                        font-size: 1.3rem;
-                        font-weight: 800;
-                    }
-
-                    i{
-                        margin-left: 10px;
-                    }
-                }
-
-                .content_enlaces{
-                    ul{
-                        justify-content: center;
-                        li{
-                            background-color: v.$amarillo;
-                            padding: 10px;
-                            border-radius: 5px;
-                            width: 80%;
-                            margin: 10px auto;
-                            transition: .25s ease;
-
-                            &:hover{
-                                transform: scale(1.1);
-                            }
-                            a{
-                                &:hover{
-                                    text-decoration: underline;
-                                    color: v.$azulClaro;
-                                }
-                            }
-
-                            i{
-                                font-size: 20px;
-                                margin: 0%;
-
-                                &:hover{
-                                    color: v.$azulClaro;
-                                }
-                            }
-                        }
-                    }
+            .content_buscador{
+                input{
+                    width: auto;
                 }
             }
         }
-    }    
+
+        .navbar_right{
+            .link{
+                a{
+                    display: none;
+                }
+            }
+
+            .link_carrito{
+                .content_lista-carrito{
+                    background-color: v.$blanco;
+                    right: 0%;
+                    left: 0%;
+                    margin: 2rem auto;
+                    width: 70%;
+                }
+            }
+        }
+    }
+
+    @include m.tablet{
+        .navbar_left{
+            .content_logo{
+                display: none;
+            }
+
+            .content_buscador{
+                input{
+                    width: auto;
+                }
+            }
+        }
+
+        .navbar_right{
+            .link_carrito{
+                .content_lista-carrito{
+                    background-color: v.$blanco;
+                    right: 0%;
+                    left: 0%;
+                    margin: 2rem auto;
+                    width: 60%;
+                }
+            }
+        }
+    }
+
+    @include m.desktopSmall{
+        .navbar_left{
+            .content_buscador{
+                input{
+                    width: auto;
+                }
+            }
+        }
+
+        .navbar_right{
+            .link_carrito{
+                .content_lista-carrito{
+                    background-color: v.$blanco;
+                    right: 0%;
+                    left: 0%;
+                    margin: 2rem auto;
+                    width: 40%;
+                }
+            }
+        }
+    }
 }

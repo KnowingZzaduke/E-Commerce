@@ -1,21 +1,4 @@
 
-
-    const toggleAbrir = document.querySelector('.abrir');
-    const toggleCerrar = document.querySelector('.cerrar_menu')
-    const menu = document.querySelector('.content_lista-menu');
-    
-    toggleAbrir.addEventListener('click', function(e){
-        if(e){
-            menu.style.display = ('block');
-        }
-    })
-
-    toggleCerrar.addEventListener('click', function(e){
-        if(e){
-            menu.style.display = ('none');
-        }
-    })
-
     //Array de objetos que contiene los productos
     let arrayProducto = [
         {
@@ -150,16 +133,12 @@
     };
 
     function mostrarProductos(){
-        if(listaCarrito || listaCarritoPhone){
+        if(listaCarrito){
+            contentListaProductos.style.display = ('block')
+            listaCarrito.style.display = ('block');
             listaCarrito.innerHTML = "";
-            listaCarritoPhone.innerHTML = "";
             carrito.forEach((prod) =>{
                 let {id, nombre, precio, img, cantidad} = prod;
-                if(widthBrowser > 481){
-                    contentListaProductos.style.display = ('block')
-                    listaCarrito.style.display = ('block');
-                    contentListaProductosPhone.style.display = ('none')
-                    listaCarritoPhone.style.display = ('none');
                     listaCarrito.innerHTML += `
                     <div class="carrito">
                         <div class="content_imagen-carrito">
@@ -178,30 +157,6 @@
                     </div>
                     <hr>
                     `
-                }else{
-                    contentListaProductos.style.display = ('none')
-                    listaCarrito.style.display = ('none');
-                    contentListaProductosPhone.style.display = ('block')
-                    listaCarritoPhone.style.display = ('block');
-                    listaCarritoPhone.innerHTML +=`
-                    <div class="carrito">
-                        <div class="content_imagen-carrito">
-                        <img src="${img}" alt="Monitor Gamer">
-                        </div>
-                        <div class="content_detalle-producto">
-                            <p>${nombre}
-                                <span>$${precio}</span>
-                                <span>X${cantidad}</span>
-                            </p>
-                        </div>
-                        <div class="content_boton-borrar-producto">
-                            <i class="fa-solid fa-trash trash" onclick="eliminarProducto(${id})" title="Borrar"></i>
-                        </div>
-                        <hr>
-                    </div>
-                    <hr>
-                    `
-                }
             })
         }
     }
@@ -209,7 +164,6 @@
     function crearX(){
         const div = document.createElement('DIV');
         listaCarrito.insertAdjacentHTML('beforebegin', '<p class="fa-sharp fa-solid fa-xmark cerrar_carrito" onclick="cerrarCarrito()"></p>');
-        listaCarritoPhone.insertAdjacentHTML('beforebegin', '<p class="fa-sharp fa-solid fa-xmark cerrar_carrito" onclick="cerrarCarrito()"></p>');
     }
     crearX();
 
@@ -222,10 +176,8 @@
     function vaciarCarrito(){
         carrito.length = [];
         listaCarrito.style.display= ('none');
-        listaCarritoPhone.style.display= ('none');
         if(carrito.length == []){
             contentListaProductos.style.display = ('none');
-            contentListaProductosPhone.style.display = ('none');
             quitarScroll();
             
         }else{
@@ -236,15 +188,11 @@
     function agregarScroll(){
         listaCarrito.style.overflowY = "scroll";
         listaCarrito.style.height = "300px";
-        listaCarritoPhone.style.overflowY = "scroll";
-        listaCarritoPhone.style.height = "300px";
     }
 
     function quitarScroll(){
         listaCarrito.style.overflowY = "hidden";
         listaCarrito.style.height = "auto";
-        listaCarritoPhone.style.overflowY = "hidden";
-        listaCarritoPhone.style.height = "auto";
     }
 
     function mostrarAlerta(){
@@ -259,7 +207,6 @@
             }, 1000);
         }else{
             contentListaProductos.style.display = ('block');
-            contentListaProductosPhone.style.display = ('block');
         }
     }
 
@@ -269,7 +216,6 @@
         mostrarProductos();
         if(carrito.length === 0){
             contentListaProductos.style.display = ('none');
-            contentListaProductosPhone.style.display = ('none');
             quitarScroll();
         }
     }
@@ -277,5 +223,4 @@
     //CERRAR CARRITO
     function cerrarCarrito(){
         contentListaProductos.style.display = ('none');
-        contentListaProductosPhone.style.display = ('none');
     } 
