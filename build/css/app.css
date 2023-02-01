@@ -551,7 +551,7 @@ header .content_lista-carrito-phone {
     display: none;
   }
   .navbar .navbar_left .content_buscador input {
-    width: auto;
+    width: 150px;
   }
   .navbar .navbar_right .link a {
     display: none;
