@@ -21,8 +21,12 @@ footer{
 
             p{
                 color: v.$blanco;
-                width: 85%;
+                width: 70%;
                 margin: 0% auto;
+                text-align: center;
+                @include m.phone{
+                    width: 85%;
+                }
             }
 
             .content_redes-sociales{

@@ -853,6 +853,11 @@ header .content_lista-carrito-phone {
   box-shadow: 0 0 20px 3px #34495E;
   transform: scale(0.9);
 }
+@media only screen and (max-width: 480px) {
+  .section_productos-populares .content_productos .producto:hover {
+    transform: scale(1);
+  }
+}
 .section_productos-populares .content_productos .producto:hover .content_detalles-producto {
   height: 60px;
 }
@@ -1159,8 +1164,14 @@ footer .content_footer .colum_footer h3 {
 }
 footer .content_footer .colum_footer p {
   color: white;
-  width: 85%;
+  width: 70%;
   margin: 0% auto;
+  text-align: center;
+}
+@media only screen and (max-width: 480px) {
+  footer .content_footer .colum_footer p {
+    width: 85%;
+  }
 }
 footer .content_footer .colum_footer .content_redes-sociales {
   display: grid;
