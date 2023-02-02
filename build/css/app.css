@@ -1148,6 +1148,11 @@ footer .content_footer {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   font-weight: 800;
 }
+@media only screen and (max-width: 480px) {
+  footer .content_footer {
+    text-align: center;
+  }
+}
 footer .content_footer .colum_footer h3 {
   color: #F5B041;
   font-size: 2rem;
@@ -1172,6 +1177,11 @@ footer .content_footer .colum_footer h4 {
 footer .content_footer .colum_footer .content_enlaces ul, footer .content_footer .colum_footer .content_enlaces li {
   list-style: inside;
   list-style-position: inherit;
+}
+@media only screen and (max-width: 480px) {
+  footer .content_footer .colum_footer .content_enlaces ul, footer .content_footer .colum_footer .content_enlaces li {
+    list-style: none;
+  }
 }
 footer .content_footer .colum_footer .content_enlaces li {
   width: 85%;
