@@ -574,6 +574,8 @@
             justify-content: center;
             img{
                 width: 600px;
+                height: 600px;
+                object-fit: cover;
             }
         }
 
@@ -585,7 +587,8 @@
                     background-color: v.$amarillo;
                     color: v.$blanco;
                     width: 200px;
-                    height: 40px;
+                    height: 60px;
+                    font-weight: 900;
                     border-radius: 10px;
                     align-items: center;
                     display: flex;
@@ -612,13 +615,14 @@
                 justify-content: center;
                 button{
                     width: 200px;
-                    height: 40px;
+                    height: 60px;
                     background-color: v.$amarillo;
                     border-radius: 10px;
                     transition: .25s ease;
                     border: none;
                     color: v.$blanco;
-
+                    font-size: 1.2rem;
+                    font-weight: 900;
                     &:hover{
                         transform: scale(1.1);
                         cursor: pointer;

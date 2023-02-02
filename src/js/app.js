@@ -117,15 +117,11 @@
             const prod = carrito.map((prod) => {
                 if(prod.id === id){
                     prod.cantidad++;
-
-                    if(carrito.length === 0){
-                    return prod.cantidad = 0;
-                }
                 }
             })
         }else{
             const item = arrayProducto.find((prod) => prod.id === id)
-            carrito.push(item);
+            carrito.push({...item});
 
             if(carrito.length > 1){
                 agregarScroll()

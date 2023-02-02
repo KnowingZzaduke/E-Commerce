@@ -1067,6 +1067,8 @@ header .content_lista-carrito-phone {
 }
 .section_producto-mitad-precio .content_producto-mitad-precio .content_left-producto-mitad-precio img {
   width: 600px;
+  height: 600px;
+  object-fit: cover;
 }
 .section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_aviso {
   display: flex;
@@ -1076,7 +1078,8 @@ header .content_lista-carrito-phone {
   background-color: #F5B041;
   color: white;
   width: 200px;
-  height: 40px;
+  height: 60px;
+  font-weight: 900;
   border-radius: 10px;
   align-items: center;
   display: flex;
@@ -1098,12 +1101,14 @@ header .content_lista-carrito-phone {
 }
 .section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_boton-comprar button {
   width: 200px;
-  height: 40px;
+  height: 60px;
   background-color: #F5B041;
   border-radius: 10px;
   transition: 0.25s ease;
   border: none;
   color: white;
+  font-size: 1.2rem;
+  font-weight: 900;
 }
 .section_producto-mitad-precio .content_producto-mitad-precio .content_right-producto-mitad-precio .content_boton-comprar button:hover {
   transform: scale(1.1);
@@ -1133,4 +1138,48 @@ header .content_lista-carrito-phone {
   .section_producto-mitad-precio .content_producto-mitad-precio .content_left-producto-mitad-precio img {
     width: 650px;
   }
+}
+footer {
+  margin-top: 3rem;
+  background-color: #34495E;
+}
+footer .content_footer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  font-weight: 800;
+}
+footer .content_footer .colum_footer h3 {
+  color: #F5B041;
+  font-size: 2rem;
+}
+footer .content_footer .colum_footer p {
+  color: white;
+  width: 85%;
+  margin: 0% auto;
+}
+footer .content_footer .colum_footer .content_redes-sociales {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  text-align: center;
+}
+footer .content_footer .colum_footer .content_redes-sociales i {
+  filter: invert(100);
+}
+footer .content_footer .colum_footer h4 {
+  color: #F5B041;
+  font-size: 1.2rem;
+}
+footer .content_footer .colum_footer .content_enlaces ul, footer .content_footer .colum_footer .content_enlaces li {
+  list-style: inside;
+  list-style-position: inherit;
+}
+footer .content_footer .colum_footer .content_enlaces li {
+  width: 85%;
+  margin: 0% auto;
+}
+footer .content_footer .colum_footer .content_enlaces li a {
+  color: white;
+}
+footer .content_footer .colum_footer .content_enlaces li a:hover {
+  color: #34495E;
 }
