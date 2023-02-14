@@ -5,7 +5,7 @@
             id: 1,
             nombre: "Cámara",
             precio: 5000,
-            img: "src/img/camara-gamer.jpg",
+            img: "src/img/camara-gamer.webp",
             cantidad: 1
         },
 
@@ -13,7 +13,7 @@
             id: 2,
             nombre: "Monitor",
             precio: 5000,
-            img: "src/img/monitor-gamer.jpg",
+            img: "src/img/monitor-gamer.webp",
             cantidad: 1
         },
 
@@ -21,7 +21,7 @@
             id: 3,
             nombre: "Tarjeta gráfica",
             precio: 5000,
-            img: "src/img/tarjeta-grafica.jpg",
+            img: "src/img/tarjeta-grafica.webp",
             cantidad: 1
         },
 
@@ -29,7 +29,7 @@
             id: 4,
             nombre: "Control Xbox",
             precio: 5000,
-            img: "src/img/mando-xbox.jpg",
+            img: "src/img/mando-xbox.webp",
             cantidad: 1
         },
 
@@ -37,7 +37,7 @@
             id: 5,
             nombre: "Auriculares",
             precio: 5000,
-            img: "src/img/auriculares-gamer.jpg",
+            img: "src/img/auriculares-gamer.webp",
             cantidad: 1
         },
 
@@ -45,7 +45,7 @@
             id: 6,
             nombre: "Mouse",
             precio: 5000,
-            img: "src/img/mouse-gamer.jpg",
+            img: "src/img/mouse-gamer.webp",
             cantidad: 1
         },
 
@@ -53,7 +53,7 @@
             id: 7,
             nombre: "Teclado",
             precio: 5000,
-            img: "src/img/teclado-gamer.jpg",
+            img: "src/img/teclado-gamer.webp",
             cantidad: 1
         },
 
@@ -61,7 +61,7 @@
             id: 8,
             nombre: "Gabinete",
             precio: 5000,
-            img: "src/img/carcasa-gamer.jpg",
+            img: "src/img/carcasa-gamer.webp",
             cantidad: 1
         }
     ]
@@ -213,6 +213,7 @@
         const idProducto = id;
         carrito = carrito.filter((producto) => producto.id !== idProducto);
         mostrarProductos();
+        agregarProducto();
         console.log(carrito.length)
         if(carrito.length === 0){
             contentListaProductos.style.display = ('none');
