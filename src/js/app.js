@@ -213,7 +213,6 @@
         const idProducto = id;
         carrito = carrito.filter((producto) => producto.id !== idProducto);
         mostrarProductos();
-        agregarProducto();
         console.log(carrito.length)
         if(carrito.length === 0){
             contentListaProductos.style.display = ('none');
