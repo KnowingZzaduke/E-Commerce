@@ -99,7 +99,6 @@
     function modalImage(img){
         const item = arrayProducto.find((prod) => prod.img === img);
         const nombreProducto = item.nombre;
-        console.log(nombreProducto);
         if(item){
             swal({
                 title: `${nombreProducto}`,
@@ -128,9 +127,13 @@
             }     
         }  
 
-        mostrarProductos()
+        mostrarProductos();
         calcularValorProductos();
     };
+
+    function guardarLocalStorage(){
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+    }
 
     function mostrarProductos(){
         if(listaCarrito){
@@ -161,6 +164,7 @@
         }
     }
 
+
     function crearX(){
         const div = document.createElement('DIV');
         listaCarrito.insertAdjacentHTML('beforebegin', '<p class="fa-sharp fa-solid fa-xmark cerrar_carrito" onclick="cerrarCarrito()"></p>');
@@ -171,6 +175,7 @@
         if(valorTotal){
             valorTotal.innerHTML = carrito.reduce((total, prod) => total + prod.cantidad * prod.precio, 0);
         }
+        guardarLocalStorage();
     }
 
     function vaciarCarrito(){
@@ -212,8 +217,10 @@
     function eliminarProducto(id){
         const idProducto = id;
         carrito = carrito.filter((producto) => producto.id !== idProducto);
+        if(carrito.filter){
+            valorTotal.innerHTML = carrito.reduce((total, prod) => total + prod.cantidad * prod.precio, 0);
+        }
         mostrarProductos();
-        console.log(carrito.length)
         if(carrito.length === 0){
             contentListaProductos.style.display = ('none');
             quitarScroll();
