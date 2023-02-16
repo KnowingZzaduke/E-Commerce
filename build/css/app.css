@@ -634,6 +634,7 @@ header .content_lista-carrito-phone {
 
 .section_productos-en-descuento {
   display: grid;
+  padding-top: 3rem;
   grid-template-columns: repeat(2, 1fr);
   text-align: center;
   align-items: center;
@@ -642,6 +643,17 @@ header .content_lista-carrito-phone {
 .section_productos-en-descuento .content_section-right {
   padding-bottom: 5rem;
   margin-top: 5rem;
+}
+.section_productos-en-descuento .content_section-left .content_producto,
+.section_productos-en-descuento .content_section-right .content_producto {
+  display: grid;
+  row-gap: 10px;
+  justify-content: center;
+}
+.section_productos-en-descuento .content_section-left .content_producto img,
+.section_productos-en-descuento .content_section-right .content_producto img {
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px black;
 }
 @media only screen and (max-width: 480px) {
   .section_productos-en-descuento .content_section-left,
