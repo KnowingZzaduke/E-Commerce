@@ -131,10 +131,7 @@
         calcularValorProductos();
     };
 
-    function guardarLocalStorage(){
-        localStorage.setItem("carrito", JSON.stringify(carrito));
-    }
-
+    // FUNCIÓN PARA MOSTRAR LOS PRODUCTOS
     function mostrarProductos(){
         if(listaCarrito){
             contentListaProductos.style.display = ('block')
@@ -164,20 +161,20 @@
         }
     }
 
-
-    function crearX(){
+    // ICONO DE LA X EN EL CARRITO
+    (() =>{
         const div = document.createElement('DIV');
         listaCarrito.insertAdjacentHTML('beforebegin', '<p class="fa-sharp fa-solid fa-xmark cerrar_carrito" onclick="cerrarCarrito()"></p>');
-    }
-    crearX();
+    })();
 
+    // FUNCIÓN PARA CALCULAR EL VALOR DE LOS PRODUCTOS
     function calcularValorProductos(){
         if(valorTotal){
             valorTotal.innerHTML = carrito.reduce((total, prod) => total + prod.cantidad * prod.precio, 0);
         }
-        guardarLocalStorage();
     }
 
+    //FUNCIÓN PARA VACIAR EL CARRITO
     function vaciarCarrito(){
         carrito.length = [];
         listaCarrito.style.display= ('none');
@@ -189,16 +186,19 @@
         }
     }
 
+    //FUNCIÓN PARA AGREGAR EL SCROLL AL CARRITO
     function agregarScroll(){
         listaCarrito.style.overflowY = "scroll";
         listaCarrito.style.height = "300px";
     }
 
+    //FUNCIÓN PARA QUITA EL SCROLL AL CARRITO
     function quitarScroll(){
         listaCarrito.style.overflowY = "hidden";
         listaCarrito.style.height = "auto";
     }
 
+    //FUNCIÓN PARA MOSTRAR LA ALERTA
     function mostrarAlerta(){
         if(carrito.length == 0){
             setTimeout(() =>{
@@ -214,11 +214,12 @@
         }
     }
 
+    //FUNCIÓN PARA ELIMINAR PRODUCTOS TENIENDO EN CUENTA SU ID
     function eliminarProducto(id){
         const idProducto = id;
         carrito = carrito.filter((producto) => producto.id !== idProducto);
         if(carrito.filter){
-            valorTotal.innerHTML = carrito.reduce((total, prod) => total + prod.cantidad * prod.precio, 0);
+            calcularValorProductos();
         }
         mostrarProductos();
         if(carrito.length === 0){
@@ -227,7 +228,7 @@
         }
     }
 
-    //CERRAR CARRITO
+    //FUNCIÓN PARA CERRAR CARRITO
     function cerrarCarrito(){
         contentListaProductos.style.display = ('none');
     } 
